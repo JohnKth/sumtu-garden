@@ -94,51 +94,125 @@
         <p style="color: #666; font-size: 14px; margin-bottom: 30px;">Learn key words to talk about the weather conditions and temperatures. (မိုးလေဝသနှင့် ရာသီဥတုဆိုင်ရာ အခြေခံစကားလုံးများ)။</p>
 
         <!-- ========================================== -->
-        <!-- အုပ်စု (၁) - Core Weather Elements (နာမ်စကားလုံးများ) -->
-        <!-- ========================================== -->
-        <div class="group-title">1. Weather Elements (Nouns)</div>
-        <div class="vocab-grid">
-            <div class="vocab-card"><img src="images/weather.png" class="vocab-img" alt="Weather"><b>weather</b><i>noun</i><span>မိုးလေဝသ / ရာသီဥတု</span></div>
-            <div class="vocab-card"><img src="images/sun.png" class="vocab-img" alt="Sun"><b>sun</b><i>noun</i><span>နေမင်း / နေ</span></div>
-            <div class="vocab-card"><img src="images/rain.png" class="vocab-img" alt="Rain"><b>rain</b><i>noun</i><span>မိုး / မိုးရေ</span></div>
-            <div class="vocab-card"><img src="images/cloud.png" class="vocab-img" alt="Cloud"><b>cloud</b><i>noun</i><span>တိမ်တိုက် / တိမ်</span></div>
-            <div class="vocab-card"><img src="images/wind.png" class="vocab-img" alt="Wind"><b>wind</b><i>noun</i><span>လေ / လေပြေ</span></div>
-            <div class="vocab-card"><img src="images/snow.png" class="vocab-img" alt="Snow"><b>snow</b><i>noun</i><span>နှင်း / ဆီးနှင်း</span></div>
-            <div class="vocab-card"><img src="images/fog.png" class="vocab-img" alt="Fog"><b>fog</b><i>noun</i><span>မြူ / နှင်းမြူ</span></div>
-            <div class="vocab-card"><img src="images/ice.png" class="vocab-img" alt="Ice"><b>ice</b><i>noun</i><span>ရေခဲ</span></div>
+<!-- PANEL 3: VOCABULARY DYNAMIC TOPIC PANEL   -->
+<!-- ========================================== -->
+<div id="part3-panel" class="speaking-panel">
+    <h2 style="color: #1e3d59; margin-top: 0;">📚 A2 Vocabulary Topics</h2>
+    <p style="color: #666; font-size: 14px; margin-bottom: 20px;">Select a topic below to explore the vocabulary words. (လေ့လာလိုသော ခေါင်းစဉ်ကို နှိပ်၍ စကားလုံးများကို ကြည့်ရှုပါ)။</p>
+    
+    <!-- ၁။ Topic ကတ်ပြားများ အရင်ပြသသည့်နေရာ -->
+    <div class="vocab-grid">
+        <!-- Clothes & Accessories ကတ်ပြားကို နှိပ်လျှင် page အသစ်သို့ သွားရန် ပြင်ဆင်ခြင်း -->
+        <div class="topic-card" onclick="location.href='clothes-vocabulary.html';">
+            <span class="topic-icon">🎒</span>
+            <span class="topic-name">Clothes & Accessories</span>
+        </div>
+        <!-- ၁။ Communication & Tech ကတ်ပြား -->
+        <div class="topic-card" onclick="location.href='tech-vocabulary.html';">
+            <span class="topic-icon">💻</span>
+            <span class="topic-name">Communication & Tech</span>
         </div>
 
-        <!-- ========================================== -->
-        <!-- အုပ်စု (၂) - Describing Weather (နာမဝိသေသနများ) -->
-        <!-- ========================================== -->
-        <div class="group-title">2. Describing Weather (Adjectives)</div>
-        <div class="vocab-grid">
-            <div class="vocab-card"><img src="images/sunny.png" class="vocab-img" alt="Sunny"><b>sunny</b><i>adjective</i><span>နေသာသော</span></div>
-            <div class="vocab-card"><img src="images/cloudy.png" class="vocab-img" alt="Cloudy"><b>cloudy</b><i>adjective</i><span>တိမ်ထူသော</span></div>
-            <div class="vocab-card"><img src="images/windy.png" class="vocab-img" alt="Windy"><b>windy</b><i>adjective</i><span>လေပြင်းတိုက်သော</span></div>
-            <div class="vocab-card"><img src="images/foggy.png" class="vocab-img" alt="Foggy"><b>foggy</b><i>adjective</i><span>မြူဆိုင်းသော</span></div>
+        <!-- ၂။ Appliances ကတ်ပြား -->
+        <div class="topic-card" onclick="location.href='appliances-vocabulary.html';">
+            <span class="topic-icon">🔌</span>
+            <span class="topic-name">Appliances</span>
         </div>
+        <!-- ၃။ Documents and Texts ကတ်ပြား -->
+        <div class="topic-card" onclick="location.href='documents-vocabulary.html';">
+            <span class="topic-icon">📜</span>
+            <span class="topic-name">Documents and Texts</span>
+        </div>
+        <div class="topic-card" onclick="selectTopic('appliances', this)">
+            <span class="topic-icon">🎓</span>
+            <span class="topic-name">Education</span>
+        </div>
+        <div class="topic-card" onclick="selectTopic('appliances', this)">
+            <span class="topic-icon">🎬</span>
+            <span class="topic-name">Entertainment and Media</span>
+        </div>
+        <div class="topic-card" onclick="selectTopic('appliances', this)">
+            <span class="topic-icon">‍👩‍👧‍👦</span>
+            <span class="topic-name">Family and Friends</span>
+        </div>
+        <div class="topic-card" onclick="selectTopic('appliances', this)">
+            <span class="topic-icon">🍉</span>
+            <span class="topic-name">Food and Drink</span>
+        </div>
+        <div class="topic-card" onclick="selectTopic('appliances', this)">
+            <span class="topic-icon">🧑‍⚕️</span>
+            <span class="topic-name">Health, Medicine and Exercise</span>
+        </div>
+        <div class="topic-card" onclick="selectTopic('appliances', this)">
+            <span class="topic-icon">🏓</span>
+            <span class="topic-name">Hobbies and Leisure</span>
+        </div>
+        <div class="topic-card" onclick="selectTopic('appliances', this)">
+            <span class="topic-icon">🏠</span>
+            <span class="topic-name">House and Home</span>
+        </div>
+        <div class="topic-card" onclick="selectTopic('appliances', this)">
+            <span class="topic-icon">📏</span>
+            <span class="topic-name">Measurements</span>
+        </div>
+        <div class="topic-card" onclick="selectTopic('appliances', this)">
+            <span class="topic-icon">🥹</span>
+            <span class="topic-name">Personal Feelings, Opinions and Experiences (adjectives)</span>
+        </div>
+        <div class="topic-card" onclick="selectTopic('appliances', this)">
+            <span class="topic-icon">🏛️</span>
+            <span class="topic-name">Places: Buildings</span>
+        </div>
+        <div class="topic-card" onclick="selectTopic('appliances', this)">
+            <span class="topic-icon">🌴</span>
+            <span class="topic-name">Places: Countryside</span>
+        </div>
+        <div class="topic-card" onclick="selectTopic('appliances', this)">
+            <span class="topic-icon">🏢</span>
+            <span class="topic-name">Places: Town and City</span>
+        </div>
+        <div class="topic-card" onclick="selectTopic('appliances', this)">
+            <span class="topic-icon">🚴‍♀️</span>
+            <span class="topic-name">Services</span>
+        </div>
+        <div class="topic-card" onclick="selectTopic('appliances', this)">
+            <span class="topic-icon">🛍️</span>
+            <span class="topic-name">Shopping</span>
+        </div>
+        <div class="topic-card" onclick="selectTopic('appliances', this)">
+            <span class="topic-icon">⚽</span>
+            <span class="topic-name">Sport</span>
+        </div>
+        <div class="topic-card" onclick="selectTopic('appliances', this)">
+            <span class="topic-icon">🌵</span>
+            <span class="topic-name">The Natural World</span>
+        </div>
+        <div class="topic-card" onclick="selectTopic('appliances', this)">
+            <span class="topic-icon">⏰</span>
+            <span class="topic-name">Time</span>
+        </div>
+        <div class="topic-card" onclick="selectTopic('appliances', this)">
+            <span class="topic-icon">✈️</span>
+            <span class="topic-name">Travel and Transport</span>
+        </div>
+        <div class="topic-card" onclick="selectTopic('appliances', this)">
+            <span class="topic-icon">🌦️</span>
+            <span class="topic-name">Weather</span>
+        </div>
+        <div class="topic-card" onclick="selectTopic('appliances', this)">
+            <span class="topic-icon">🧑‍🏭</span>
+            <span class="topic-name">Work and Jobs</span>
+        </div>
+    </div>
 
-        <!-- ========================================== -->
-        <!-- အုပ်စု (၃) - Temperature & State (အပူချိန်နှင့် အခြေအနေ) -->
-        <!-- ========================================== -->
-        <div class="group-title">3. Temperature & Conditions</div>
-        <div class="vocab-grid">
-            <div class="vocab-card"><img src="images/hot.png" class="vocab-img" alt="Hot"><b>hot</b><i>adjective</i><span>ပူပြင်းသော</span></div>
-            <div class="vocab-card"><img src="images/warm.png" class="vocab-img" alt="Warm"><b>warm</b><i>adjective</i><span>နွေးထွေးသော</span></div>
-            <div class="vocab-card"><img src="images/cold.png" class="vocab-img" alt="Cold"><b>cold</b><i>adjective</i><span>အေးမြသော</span></div>
-            <div class="vocab-card"><img src="images/wet.png" class="vocab-img" alt="Wet"><b>wet</b><i>adjective</i><span>စိုစွတ်သော</span></div>
+    <!-- ၂။ ကတ်ပြားနှိပ်မှ ပွင့်လာမည့် စကားလုံးများပြသရာ Panel -->
+    <div id="words-display-panel" class="words-display-panel">
+        <h3 id="selected-topic-title" style="color: #1e3d59; margin-top: 0; border-bottom: 2px solid #f4f7f6; padding-bottom: 10px;"></h3>
+        <div class="words-grid" id="words-grid-container">
+            <!-- JavaScript က စကားလုံးတွေကို ဒီထဲမှာ Auto လာထုတ်ပေးပါမယ် -->
         </div>
-
-        <!-- ========================================== -->
-        <!-- အုပ်စု (၄) - Stormy Weather (မုန်တိုင်းထန်သော အခြေအနေ) -->
-        <!-- ========================================== -->
-        <div class="group-title">4. Stormy Weather</div>
-        <div class="vocab-grid">
-            <div class="vocab-card"><img src="images/storm.png" class="vocab-img" alt="Storm"><b>storm</b><i>noun</i><span>မုန်တိုင်း</span></div>
-            <div class="vocab-card"><img src="images/stormy.png" class="vocab-img" alt="Stormy"><b>stormy</b><i>adjective</i><span>မုန်တိုင်းထန်သော</span></div>
-            <div class="vocab-card"><img src="images/thunderstorm.png" class="vocab-img" alt="Thunderstorm"><b>thunderstorm</b><i>noun</i><span>မိုးသက်မုန်တိုင်း</span></div>
-        </div>
+    </div>
+</div>
 
         <!-- အောက်ခြေခလုတ် -->
         <div style="margin-top: 50px; border-top: 1px solid #eee; padding-top: 20px; text-align: center;">
