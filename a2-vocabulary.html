@@ -75,6 +75,127 @@
             font-size: 13px;
             color: #555;
         }
+        /* Vocabulary Topic Layout */
+.vocab-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
+    margin-top: 25px;
+}
+
+/* Topic Card Style */
+.topic-card {
+    background: #fff;
+    border: 2px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 20px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.01);
+}
+.topic-card:hover {
+    border-color: #1e3d59;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.04);
+}
+.topic-card.active-topic {
+    background: #1e3d59;
+    border-color: #1e3d59;
+    color: #fff;
+}
+.topic-icon {
+    font-size: 32px;
+    display: block;
+    margin-bottom: 10px;
+}
+.topic-name {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* Words Display Panel Style */
+.words-display-panel {
+    display: none; /* Initially hidden */
+    margin-top: 30px;
+    background: #fff;
+    border: 1px solid #ffe6cc;
+    border-radius: 16px;
+    padding: 20px;
+    animation: fadeIn 0.4s ease forwards;
+}
+.words-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* Individual Word Block */
+.word-block {
+    background: #f8fafc;
+    border-left: 4px solid #1e3d59;
+    border-radius: 0 12px 12px 0;
+    padding: 14px 16px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.01);
+}
+.word-main-line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+.word-text {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1e3d59;
+}
+.word-meta {
+    font-size: 13px;
+    color: #64748b;
+}
+.pos-badge {
+    background: #e2e8f0;
+    color: #334155;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 600;
+    margin-right: 5px;
+}
+.audio-btn {
+    background: #1e3d59;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    font-size: 11px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 6px;
+}
+.audio-btn:hover { background: #ff6e40; }
+.word-meaning {
+    font-size: 14px;
+    color: #334155;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+.word-example {
+    font-size: 13px;
+    color: #64748b;
+    font-style: italic;
+    border-top: 1px dashed #e2e8f0;
+    padding-top: 6px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
     </style>
 </head>
 <body>
