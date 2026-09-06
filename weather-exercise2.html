@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather - Exercise 3 (Matching)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            padding: 40px 20px;
+            margin: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0px 10px 30px rgba(0,0,0,0.05);
+        }
+        .badge-cefr {
+            background: #9e1c22;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 10px;
+            font-size: 12px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        .match-section {
+            display: flex;
+            gap: 30px;
+            margin-top: 25px;
+        }
+        .words-column {
+            flex: 1;
+            background: #fff;
+            border: 1px solid #eef2f5;
+            padding: 20px;
+            border-radius: 12px;
+        }
+        .meanings-column {
+            flex: 1.2;
+            background: #fffdfa;
+            border: 1px solid #ffe6cc;
+            padding: 20px;
+            border-radius: 12px;
+            line-height: 2;
+            font-size: 14px;
+        }
+        .match-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 15px;
+            font-weight: 500;
+        }
+        .match-select {
+            padding: 6px 12px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-family: 'Poppins', sans-serif;
+            font-weight: bold;
+            color: #1e3d59;
+        }
+        .btn-check {
+            background: #1e3d59;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            margin-top: 20px;
+            width: 100%;
+        }
+        .btn-check:hover { background: #142a3d; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <span class="badge-cefr">CEFR A2 Key • Vocabulary Matching</span>
+        <h1 style="color: #1e3d59; margin: 0 0 10px 0; font-size: 26px;">🧩 Weather: Exercise 3</h1>
+        <p style="color: #666; font-size: 14px; margin-bottom: 25px;">Match the weather words with their correct meanings. (ဝေါဟာရများကို မှန်ကန်သောအဓိပ္ပာယ်များနှင့် တွဲစပ်ပေးပါ)။</p>
+
+        <div class="match-section">
+            <!-- ဘယ်ဘက်ခြမ်း - ဝေါဟာရများနှင့် Dropdown ရွေးချယ်စရာများ -->
+            <div class="words-column">
+                <div class="match-row"><span>1. Sunny ☀️</span> <select id="w1" class="match-select"><option value="">?</option><option value="d">a</option><option value="d">b</option><option value="d">c</option><option value="d">d</option><option value="d">e</option><option value="d">f</option><option value="d">g</option><option value="d">h</option><option value="d">i</option><option value="d">j</option></select></div>
+                <div class="match-row"><span>2. Rainy 🌧️</span> <select id="w2" class="match-select"><option value="">?</option><option value="g">a</option><option value="g">b</option><option value="g">c</option><option value="g">d</option><option value="g">e</option><option value="g">f</option><option value="g">g</option><option value="g">h</option><option value="g">i</option><option value="g">j</option></select></div>
+                <div class="match-row"><span>3. Cloudy ☁️</span> <select id="w3" class="match-select"><option value="">?</option><option value="a">a</option><option value="a">b</option><option value="a">c</option><option value="a">d</option><option value="a">e</option><option value="a">f</option><option value="a">g</option><option value="a">h</option><option value="a">i</option><option value="a">j</option></select></div>
+                <div class="match-row"><span>4. Windy 💨</span> <select id="w4" class="match-select"><option value="">?</option><option value="f">a</option><option value="f">b</option><option value="f">c</option><option value="f">d</option><option value="f">e</option><option value="f">f</option><option value="f">g</option><option value="f">h</option><option value="f">i</option><option value="f">j</option></select></div>
+                <div class="match-row"><span>5. Snowy ❄️</span> <select id="w5" class="match-select"><option value="">?</option><option value="e">a</option><option value="e">b</option><option value="e">c</option><option value="e">d</option><option value="e">e</option><option value="e">f</option><option value="e">g</option><option value="e">h</option><option value="e">i</option><option value="e">j</option></select></div>
+                <div class="match-row"><span>6. Foggy 🌫️</span> <select id="w6" class="match-select"><option value="">?</option><option value="h">a</option><option value="h">b</option><option value="h">c</option><option value="h">d</option><option value="h">e</option><option value="h">f</option><option value="h">g</option><option value="h">h</option><option value="h">i</option><option value="h">j</option></select></div>
+                <div class="match-row"><span>7. Stormy ⛈️</span> <select id="w7" class="match-select"><option value="">?</option><option value="i">a</option><option value="i">b</option><option value="i">c</option><option value="i">d</option><option value="i">e</option><option value="i">f</option><option value="i">g</option><option value="i">h</option><option value="i">i</option><option value="i">j</option></select></div>
+                <div class="match-row"><span>8. Hot 🥵</span> <select id="w8" class="match-select"><option value="">?</option><option value="j">a</option><option value="j">b</option><option value="j">c</option><option value="j">d</option><option value="j">e</option><option value="j">f</option><option value="j">g</option><option value="j">h</option><option value="j">i</option><option value="j">j</option></select></div>
+                <div class="match-row"><span>9. Cold 🥶</span> <select id="w9" class="match-select"><option value="">?</option><option value="c">a</option><option value="c">b</option><option value="c">c</option><option value="c">d</option><option value="c">e</option><option value="c">f</option><option value="c">g</option><option value="c">h</option><option value="c">i</option><option value="c">j</option></select></div>
+                <div class="match-row"><span>10. Humid 💦</span> <select id="w10" class="match-select"><option value="">?</option><option value="b">a</option><option value="b">b</option><option value="b">c</option><option value="b">d</option><option value="b">e</option><option value="b">f</option><option value="b">g</option><option value="b">h</option><option value="b">i</option><option value="b">j</option></select></div>
+            </div>
+
+            <!-- ညာဘက်ခြမ်း - အဓိပ္ပာယ်ဖွင့်ဆိုချက်များ -->
+            <div class="meanings-column">
+                <b>Meanings (အဓိပ္ပာယ်များ):</b><br>
+                <b>a.</b> There are many clouds in the sky.<br>
+                <b>b.</b> There is a lot of water in the air.<br>
+                <b>c.</b> The temperature is very low.<br>
+                <b>d.</b> The sun is shining.<br>
+                <b>e.</b> There is a lot of snow.<br>
+                <b>f.</b> There is a lot of wind.<br>
+                <b>g.</b> There is a lot of rain.<br>
+                <b>h.</b> You cannot see clearly because of thick mist.<br>
+                <b>i.</b> There is thunder, lightning, and strong rain/wind.<br>
+                <b>j.</b> The temperature is very high.
+            </div>
+        </div>
+
+        <!-- အဖြေစစ်ဆေးသည့်ခလုတ် -->
+        <button class="btn-check" onclick="checkMatchingAnswers()">Check Matching Score (ရလဒ်စစ်ဆေးရန်)</button>
+        <p id="match-result" style="margin-top: 20px; font-weight: bold; font-size: 16px; text-align: center;"></p>
+
+        <!-- အောက်ခြေသွားလာမှုခလုတ် -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; border-top: 1px solid #eee; padding-top: 20px;">
+            <a href="#" onclick="window.close();" style="color: #666; text-decoration: none; font-size: 14px; font-weight: 500;">
+                ⬅️ Close Page
+            </a>
+            <a href="week2-lesson.html" style="color: #9e1c22; text-decoration: none; font-size: 14px; font-weight: 600;">
+                Go to Week 2 ➡️
+            </a>
+        </div>
+    </div>
+
+    <!-- JavaScript Engine for Checking 10 Matching Words -->
+    <script>
+        function checkMatchingAnswers() {
+            let matchScore = 0;
+            
+            // Dropdown တစ်ခုချင်းစီ ရွေးချယ်ထားတဲ့ စာလုံးမှန်မမှန် တိုက်စစ်ခြင်း
+            if(document.getElementById('w1').value === "d") matchScore++;
+            if(document.getElementById('w2').value === "g") matchScore++;
+            if(document.getElementById('w3').value === "a") matchScore++;
+            if(document.getElementById('w4').value === "f") matchScore++;
+            if(document.getElementById('w5').value === "e") matchScore++;
+            if(document.getElementById('w6').value === "h") matchScore++;
+            if(document.getElementById('w7').value === "i") matchScore++;
+            if(document.getElementById('w8').value === "j") matchScore++;
+            if(document.getElementById('w9').value === "c") matchScore++;
+
+            if(document.getElementById('w10').value === "b") matchScore++;
+            
+            const resultText = document.getElementById('match-result');
+            if(matchScore === 10) {
+                resultText.style.color = "green";
+                resultText.innerHTML = "🎉 Excellent! 10/10 Correct. အားလုံးမှန်ကန်ပါတယ်ဗျာ။";
+            } else {
+                resultText.style.color = "#9e1c22";
+                resultText.innerHTML = `⚠️ You got ${matchScore}/10 correct. ကျေးဇူးပြု၍ ထပ်မံကြိုးစားကြည့်ပါဦး။`;
+            }
+        }
+    </script>
+</body>
+</html>

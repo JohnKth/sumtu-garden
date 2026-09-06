@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS Speaking Hub - Sumtu Garden</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            margin: 0;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        h1 { color: #9e1c22; font-weight: 700; margin-bottom: 5px; }
+        .subtitle { color: #1e3d59; font-size: 18px; margin-bottom: 40px; }
+        
+        /* Layout Grid for Lesson Chapters */
+        .lesson-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            text-align: left;
+        }
+        .chapter-box {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 15px rgba(0,0,0,0.03);
+            border-left: 5px solid #ff6e40;
+        }
+        .chapter-box h2 { font-size: 20px; color: #1e3d59; margin-top: 0; }
+        
+        .lesson-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .lesson-item:last-child { border-bottom: none; }
+        
+        .lesson-item a {
+            color: #444;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+        }
+        .lesson-item a:hover { color: #9e1c22; }
+        
+        .badge {
+            font-size: 11px;
+            padding: 3px 8px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+        .badge.free { background: #e8f5e9; color: #2e7d32; }
+        .badge.lock { background: #ffebee; color: #c62828; }
+        
+        .back-btn { display: inline-block; margin-top: 40px; color: #1e3d59; text-decoration: none; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <!-- navbar.html ကို အလိုအလျောက် ဆွဲခေါ်မည့် နေရာအမှန် -->
+    <div id="navbar-container"></div>
+    <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            });
+    </script>
+    <div class="container">
+        <h1>IELTS Speaking Course Hub</h1>
+        <p class="subtitle">စနစ်တကျ အမှတ်ကောင်းရစေမည့် Speaking သင်ခန်းစာများ</p>
+        
+        <div class="lesson-grid">
+            
+            <!-- CHAPTER 1: PART 1 INTERVIEW -->
+            <div class="chapter-box" style="border-left-color: #3498db;">
+                <h2>💬 Part 1: Introduction Tactics</h2>
+                <p style="font-size: 13px; color:#777;">Learn how to answer personal questions naturally (Home, Work, Studies, Hobbies).</p>
+                <div class="lesson-item">
+                    <a href="#">Lesson 1.1: 4-Step Answer Framework</a>
+                    <span class="badge free">Free</span>
+                </div>
+                <!-- Inside speaking-hub.html under Chapter 1 -->
+                <div class="lesson-item">
+                    <a href="speaking-lesson1-2.html">Lesson 1.2: Extending Your Answers</a>
+                    <span class="badge free">Free</span>
+                </div>
+                <div class="lesson-item">
+                    <a href="#">Lesson 1.3: Topic Pack: Hometown & Job</a>
+                    <span class="badge lock">Locked</span>
+                </div>
+            </div>
+
+            <!-- CHAPTER 2: PART 2 CUE CARDS -->
+            <div class="chapter-box" style="border-left-color: #ff6e40;">
+                <h2>📋 Part 2: Cue Card Strategies</h2>
+                <p style="font-size: 13px; color:#777;">Master note-taking inside 1 minute and speaking fluently for up to 2 minutes.</p>
+                <div class="lesson-item">
+                    <a href="#">Lesson 2.1: The PPF Method (Past, Present, Future)</a>
+                    <span class="badge free">Free</span>
+                </div>
+                <!-- Connecting to the actual cue card lesson we created yesterday -->
+                <div class="lesson-item">
+                    <a href="speaking-lesson1.html">Lesson 2.2: Topic Card: Describe a Beautiful Place</a>
+                    <span class="badge free">Free</span>
+                </div>
+                <div class="lesson-item">
+                    <a href="#">Lesson 2.3: Topic Card: Describe a Person</a>
+                    <span class="badge lock">Locked</span>
+                </div>
+            </div>
+
+            <!-- CHAPTER 3: PART 3 DISCUSSION -->
+            <div class="chapter-box" style="border-left-color: #17b890;">
+                <h2>🧠 Part 3: Deep Arguments</h2>
+                <p style="font-size: 13px; color:#777;">Express abstract opinions, compare facts, and handle tough academic questions.</p>
+                <div class="lesson-item">
+                    <!-- မူရင်းစာမျက်နှာရှိ လင့်ခ်နေရာတွင် ဤကဲ့သို့ ပြင်ဆင်ပါ -->
+                    <a href="ielts-lesson3-1.html" target="_blank" style="color: #1e3d59; text-decoration: none; font-weight: 600;">
+                    Lesson 3.1: Structuring Abstract Arguments
+                    </a>
+                    <span class="badge free">Free</span>
+                </div>
+                <div class="lesson-item">
+                    <a href="#">Lesson 3.2: Speculating About the Future</a>
+                    <span class="badge lock">Locked</span>
+                </div>
+                <div class="lesson-item">
+                    <a href="#">Lesson 3.3: Agreeing & Disagreeing Politely</a>
+                    <span class="badge lock">Locked</span>
+                </div>
+            </div>
+
+        </div>
+        
+        <br>
+        <a href="ielts-practice.html" class="back-btn">← Back to Practice Portal</a>
+    </div>
+
+</body>
+</html>

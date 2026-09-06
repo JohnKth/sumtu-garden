@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS Writing Hub - Sumtu Garden</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            padding: 40px 20px;
+            margin: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 80px auto 40px auto; /* Margin set below the fixed navbar */
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0px 10px 30px rgba(0,0,0,0.05);
+        }
+        
+        /* Interactive Sectors Grid Style */
+        .hub-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 15px;
+            margin: 30px 0;
+        }
+        .hub-btn {
+            background: #fff;
+            border: 2px solid #1e3d59;
+            border-radius: 12px;
+            padding: 20px 15px;
+            text-align: center;
+            color: #1e3d59;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .hub-btn:hover { background: #f4f7f6; color: #ff6e40; }
+        .active-hub-tab { background: #1e3d59 !important; color: #fff !important; }
+        
+        /* Dynamic Content Panel Style */
+        .hub-content {
+            display: none;
+            background: #fffdfa;
+            border: 1px solid #ffe6cc;
+            border-radius: 15px;
+            padding: 35px;
+            margin-top: 25px;
+            text-align: left;
+            animation: slideUp 0.4s ease forwards;
+        }
+        .rule-card {
+            background: white;
+            border: 1px solid #eee;
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        .rule-title {
+            color: #9e1c22;
+            font-weight: 700;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- navbar.html will dynamically load here -->
+    <div id="navbar-container"></div>
+
+    <div class="container">
+        <span style="color: #9e1c22; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Sumtu Garden • Exam Preparation</span>
+        <h1 style="color: #1e3d59; margin: 5px 0 10px 0; font-size: 32px;">📝 IELTS Writing Hub</h1>
+        <p style="color: #666; font-size: 15px; margin-bottom: 30px;">Master your academic and general writing skills with rules, frameworks, and core exercises. (ကဏ္ဍများကို နှိပ်၍ စည်းမျဉ်းများကို လေ့လာပါ)။</p>
+
+                <!-- 🎯 အမှန်ပြင်ဆင်ထားသည့် မီနူးခလုတ်များ ကုဒ် -->
+        <div class="hub-grid">
+            <button onclick="switchHubTab('task1-panel')" class="hub-btn active-hub-tab">📊 Writing Task 1</button>
+            <button onclick="switchHubTab('task2-panel')" class="hub-btn">✍️ Writing Task 2</button>
+            <button onclick="switchHubTab('vocab-panel')" class="hub-btn">🧩 Vocabulary</button>
+            <button onclick="switchHubTab('grammar-panel')" class="hub-btn">📝 Grammar</button>
+        </div>
+
+
+        <!-- ========================================== -->
+        <!-- PANEL 1: WRITING TASK 1 RULES & CRITERIA -->
+        <!-- ========================================== -->
+        <div id="task1-panel" class="hub-content" style="display: block;">
+            <h2 style="color: #1e3d59; margin-top: 0;">📊 IELTS Writing Task 1 Rules & Formats</h2>
+            <p style="color: #666; font-size: 14px; margin-bottom: 25px;">You must describe, summarise, or explain visual information in your own words.</p>
+            
+            <div class="rule-card">
+                <div class="rule-title">⏱️ Time Duration (အချိန်ကန့်သတ်ချက်)</div>
+                You should spend around <b>20 minutes</b> on this task. Manage your time carefully!
+            </div>
+            <div class="rule-card">
+                <div class="rule-title">🔤 Word Count Requirements (စာလုံးရေ သတ်မှတ်ချက်)</div>
+                You must write <b>150 words or more</b>. Writing less than 150 words will result in a penalty score.
+            </div>
+            <div class="rule-card">
+                <div class="rule-title">🎯 Essay Types (မေးခွန်းပုံစံများ)</div>
+                Be prepared for: <b>Line Charts, Pie Charts, Bar Charts, Table, Map, and Process.</b>
+            </div>
+            
+            <div class="rule-card">
+                <div class="rule-title">🎯 Task 1 Assessment Criteria (အမှတ်ပေးစည်းမျဉ်းများ)</div>
+                <!-- Task 1 အမှတ်ပေးစည်းမျဉ်း (၄) ချက် Grid -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 10px; font-size: 13px; margin-top: 15px;">
+                    <div style="background:#fff; border:1px solid #eee; padding:12px; border-radius:6px;">
+                        <b style="color:#1e3d59;">1. Task Achievement (25%)</b><br>
+                        မေးခွန်းပါ အချက်အလက် အဓိက Trend တွေကို မိမိစိတ်ကူးမပါဘဲ အချက်အလက်အတိုင်း Overview တိကျစွာ ရေးနိုင်မှု။
+                    </div>
+                    <div style="background:#fff; border:1px solid #eee; padding:12px; border-radius:6px;">
+                        <b style="color:#1e3d59;">2. Coherence & Cohesion (25%)</b><br>
+                        စာပိုဒ်ခွဲပုံ စနစ်ကျမှုနှင့် Linking words (Overall, In contrast, However) များကို အချိတ်အဆက်မိမိ သုံးနိုင်မှု။
+                    </div>
+                    <div style="background:#fff; border:1px solid #eee; padding:12px; border-radius:6px;">
+                        <b style="color:#1e3d59;">3. Lexical Resource (25%)</b><br>
+                        ဒေတာပြ စကားလုံးများ (increase, drop, fluctuate) ကို ထပ်ခါတလဲလဲမဖြစ်ဘဲ စုံစုံလင်လင် သုံးနိုင်မှု။
+                    </div>
+                    <div style="background:#fff; border:1px solid #eee; padding:12px; border-radius:6px;">
+                        <b style="color:#1e3d59;">4. Grammatical Range (25%)</b><br>
+                        Tense မှန်ကန်မှု၊ Simple နှင့် Complex sentences များကို သဒ္ဒါအမှားမပါဘဲ ရောနှောအသုံးပြုနိုင်မှု။
+                    </div>
+                </div> <!-- Grid အပိတ် -->
+            </div> <!-- rule-card အပိတ် -->
+
+        </div> <!-- 🌟 ပင်မ task1-panel ၏ အပြင်ဘက်ဆုံး အပိတ် (အခု ကွက်တိ ပိတ်ပြီးပါပြီ) -->
+        <!-- ========================================== -->
+        <!-- PANEL 2: WRITING TASK 2 RULES & CRITERIA -->
+        <!-- ========================================== -->
+        <div id="task2-panel" class="hub-content">
+            <h2 style="color: #1e3d59; margin-top: 0;">✍️ IELTS Writing Task 2 Rules & Formats</h2>
+            <p style="color: #666; font-size: 14px; margin-bottom: 25px;">You must write a formal essay in response to a specific point of view, argument, or problem.</p>
+            
+            <div class="rule-card">
+                <div class="rule-title">⏱️ Time Duration (အချိန်ကန့်သတ်ချက်)</div>
+                You should spend around <b>40 minutes</b> on this task as it contributes more to your final band score.
+            </div>
+            <div class="rule-card">
+                <div class="rule-title">🔤 Word Count Requirements (စာလုံးရေ သတ်မှတ်ချက်)</div>
+                You must write <b>250 words or more</b>. Plan your essay structure carefully before writing!
+            </div>
+            <div class="rule-card">
+                <div class="rule-title">🎯 Essay Types (မေးခွန်းပုံစံများ)</div>
+                Be prepared for: Agree/Disagree, Discuss Both Views, Advantages vs Disadvantages, or Problem/Solution essay types.
+            </div>
+
+            <!-- Task 2 အမှတ်ပေးစည်းမျဉ်း (၄) ချက် Grid ပါ တစ်ခါတည်း တွဲထည့်ပေးထားပါသည် -->
+            <h3 style="color: #9e1c22; font-size: 16px; margin-top: 25px; border-bottom: 1px dashed #ddd; padding-bottom: 5px;">🎯 Task 2 Assessment Criteria (အမှတ်ပေးစည်းမျဉ်းများ)</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 10px; font-size: 13px; margin-top: 15px;">
+                <div style="background:#f9f9f9; border:1px solid #eee; padding:12px; border-radius:6px;">
+                    <b style="color:#1e3d59;">1. Task Response (25%)</b><br>
+                    မေးခွန်းကို တည့်တည့်ဖြေဆိုမှု၊ မိမိရဲ့ ရပ်တည်ချက် (Opinion) ကို စာအစအဆုံး ရှင်းလင်းပြတ်သားစွာ ဖော်ပြနိုင်မှု။
+                </div>
+                <div style="background:#f9f9f9; border:1px solid #eee; padding:12px; border-radius:6px;">
+                    <b style="color:#1e3d59;">2. Coherence & Cohesion (25%)</b><br>
+                    အချက်အလက်များကို Introduction, Body 1, Body 2, Conclusion စာပိုဒ်များဖြင့် Logic ကျကျ စီစဉ်ချိတ်ဆက်နိုင်မှု။
+                </div>
+                <div style="background:#f9f9f9; border:1px solid #eee; padding:12px; border-radius:6px;">
+                    <b style="color:#1e3d59;">3. Lexical Resource (25%)</b><br>
+                    Academic ဆန်သော စကားလုံးများ၊ Collocations များနှင့် ပတ်သက်ရာ Topic-specific ဝေါဟာရများကို သုံးနိုင်မှု။
+                </div>
+                <div style="background:#f9f9f9; border:1px solid #eee; padding:12px; border-radius:6px;">
+                    <b style="color:#1e3d59;">4. Grammatical Range (25%)</b><br>
+                    Complex sentences (Relative clauses, Conditionals) များကို ရွေးချယ်အသုံးပြုနိုင်ပြီး အမှားနည်းမှု။
+                </div>
+            </div>
+        </div> <!-- 🌟 ပင်မ task2-panel ၏ တရားဝင် အပိတ်တစ်ခုတည်းသာ ဖြစ်ရပါမည် -->
+
+
+        <!-- ========================================== -->
+        <!-- PANEL 3: VOCABULARY SECTOR -->
+        <!-- ========================================== -->
+        <div id="vocab-panel" class="hub-content">
+            <h2 style="color: #1e3d59; margin-top: 0;">🧩 Lexical Resource for Writing</h2>
+            <p style="color: #555; font-size: 15px;">Learn formal transition words, trend vocabulary (increase, fluctuate), and high-band collocations.</p>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- PANEL 4: GRAMMAR SECTOR -->
+        <!-- ========================================== -->
+        <div id="grammar-panel" class="hub-content">
+            <h2 style="color: #1e3d59; margin-top: 0;">📝 Grammatical Range & Accuracy</h2>
+            <p style="color: #555; font-size: 15px;">Focus on mastering complex sentences, passive structures, and accurate punctuation rules.</p>
+        </div>
+
+        <!-- Close button to return -->
+        <div style="margin-top: 40px; border-top: 1px solid #eee; padding-top: 20px; text-align: center;">
+            <a href="#" onclick="window.close();" style="color: #666; text-decoration: none; font-size: 14px; font-weight: 500;">
+                ⬅️ Return to Main Dashboard
+            </a>
+        </div>
+    </div>
+
+    <!-- JavaScript Switch Engine to alternate panels smoothly -->
+    <script>
+        function switchHubTab(panelId) {
+            // Hide all panels
+            const panels = document.querySelectorAll('.hub-content');
+            panels.forEach(p => p.style.display = 'none');
+            
+            // Remove active highlight style from all grid buttons
+            const buttons = document.querySelectorAll('.hub-btn');
+            buttons.forEach(b => b.classList.remove('active-hub-tab'));
+            
+            // Show the targeted content panel and add active highlight to clicked button
+            document.getElementById(panelId).style.display = 'block';
+            event.currentTarget.classList.add('active-hub-tab');
+        }
+
+        // Script to dynamically pull in the navbar layout
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+    </script>
+
+</body>
+</html>

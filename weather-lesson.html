@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 1: Types of Weather - Sumtu Garden</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            padding: 40px 20px;
+            margin: 0;
+        }
+        .lesson-container {
+            max-width: 850px;
+            margin: 40px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0px 10px 30px rgba(0,0,0,0.05);
+        }
+        h1, h2, h3 { color: #1e3d59; }
+        .section-title {
+            border-left: 5px solid #9e1c22;
+            padding-left: 15px;
+            margin-top: 40px;
+            text-transform: uppercase;
+            font-size: 20px;
+        }
+        
+        /* Flashcards Grid CSS */
+        .weather-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .weather-card {
+            background: #fff;
+            border: 2px solid #eef2f5;
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+        .weather-icon { font-size: 40px; margin-bottom: 10px; }
+        .weather-card b { color: #9e1c22; font-size: 16px; display: block; }
+        .weather-card span { font-size: 13px; color: #666; }
+
+        /* Chunks and Dialogue CSS */
+        .chunk-box {
+            background: #f7f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 15px;
+        }
+        .dialogue {
+            border-left: 3px solid #1e3d59;
+            padding-left: 15px;
+            margin: 15px 0;
+            font-style: italic;
+        }
+
+        /* CEFR Exam Exercises CSS */
+        .exam-box {
+            background: #fffdfa;
+            border: 1px solid #ffe6cc;
+            border-radius: 12px;
+            padding: 25px;
+            margin-top: 20px;
+        }
+        .badge-cefr {
+            background: #9e1c22;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 10px;
+            font-size: 12px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        .question { margin-bottom: 20px; font-size: 15px; }
+        .options { margin-top: 8px; padding-left: 20px; }
+
+        .btn-check {
+            background: #1e3d59;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            margin-top: 15px;
+        }
+        .btn-check:hover { background: #142a3d; }
+    </style>
+</head>
+<body>
+
+    <div class="lesson-container">
+        <span style="color: #9e1c22; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Week 1 • Core Lesson</span>
+        <h1 style="margin: 5px 0 25px 0; font-size: 32px;">☁️ Types of Weather (မိုးလေဝသ အမျိုးအစားများ)</h1>
+
+        <!-- ကဏ္ဍ (၁) - Vocabulary Flashcards (ရုပ်ပုံသင်္ကေတများနှင့် ဝေါဟာရ) -->
+        <h2 class="section-title">1. Vocabulary & Images</h2>
+        <p style="color: #666; font-size: 14px;">Learn the nouns and adjectives for different weather conditions.</p>
+        
+        <div class="weather-grid">
+            <div class="weather-card"><div class="weather-icon">☀️</div><b>Sunny</b><span>နေသာသော</span></div>
+            <div class="weather-card"><div class="weather-icon">🌧️</div><b>Rainy</b><span>မိုးရွာသော</span></div>
+            <div class="weather-card"><div class="weather-icon">☁️</div><b>Cloudy</b><span>တိမ်ထူသော</span></div>
+            <div class="weather-card"><div class="weather-icon">💨</div><b>Windy</b><span>လေတိုက်သော</span></div>
+            <div class="weather-card"><div class="weather-icon">❄️</div><b>Snowy</b><span>နှင်းကျသော</span></div>
+            <div class="weather-card"><div class="weather-icon">🌫️</div><b>Foggy</b><span>မြူဆိုင်းသော</span></div>
+        </div>
+
+        <!-- ကဏ္ဍ (၂) - Useful Chunks & Dialogues (အသုံးချစကားပြောပုံစံများ) -->
+        <h2 class="section-title">2. Conversational Chunks</h2>
+        <div class="chunk-box">
+            <p><b>Asking about the weather (ရာသီဥတု မေးမြန်းခြင်း):</b></p>
+            <ul>
+                <li>🗣️ <i>"What's the weather like today?"</i> (ဒီနေ့ ရာသီဥတု ဘယ်လိုရှိလဲ။)</li>
+                <li>🗣️ <i>"What's the weather like in Thailand?"</i> (ထိုင်းနိုင်ငံမှာ ရာသီဥတု ဘယ်လိုရှိလဲ။)</li>
+                <li>🗣️ <i>"What is your favorite type of weather?"</i> (ဒီနေ့ ရာသီဥတု ဘယ်လိုရှိလဲ။)</li>
+                <li>🗣️ <i>"Do you like rainy days? Why?"</i> (ထိုင်းနိုင်ငံမှာ ရာသီဥတု ဘယ်လိုရှိလဲ။)</li>
+                <li>🗣️ <i>"What do you wear when it is cold?"</i> (ဒီနေ့ ရာသီဥတု ဘယ်လိုရှိလဲ။)</li>
+                <li>🗣️ <i>"What do you do when it is sunny?"</i> (ထိုင်းနိုင်ငံမှာ ရာသီဥတု ဘယ်လိုရှိလဲ။)</li>
+                <li>🗣️ <i>"What is the weather usually like in your country?"</i> (ဒီနေ့ ရာသီဥတု ဘယ်လိုရှိလဲ။)</li>
+                <li>🗣️ <i>"Which do you prefer: hot weather or cold weather?"</i> (ထိုင်းနိုင်ငံမှာ ရာသီဥတု ဘယ်လိုရှိလဲ။)</li>
+                <li>🗣️ <i>"What can you do on a rainy day?"</i> (ဒီနေ့ ရာသီဥတု ဘယ်လိုရှိလဲ။)</li>
+            </ul>
+            <p style="margin-top: 20px;"><b>Answering (ပြန်လည်ဖြေကြားခြင်း):</b></p>
+            <ul>
+                <li>💬 <i>"It is + [adjective]."</i> (ဥပမာ - It is sunny and hot. / It is rainy and cold.)</li>
+            </ul>
+
+            <div class="dialogue">
+                <b>Example Dialogue (A2 Level Small Talk):</b><br>
+                <b>Teacher:</b> "Hi Thura! What's the weather like outside today?"<br>
+                <b>Student:</b> "Hi Teacher! <b>It is very cloudy and cool</b> today. I think it will rain soon!"
+            </div>
+        </div>
+
+        <!-- ကဏ္ဍ (၃) - Grammar Focus (သဒ္ဒါပုံသေနည်း) -->
+        <h2 class="section-title">3. Grammar Focus</h2>
+        <p><b>Noun vs Adjective Form (နာမ်နှင့် နာမဝိသေသန ကွာခြားပုံ):</b></p>
+        <p style="font-size: 15px; line-height: 1.6;">
+            ရာသီဥတုကို ဖော်ပြတဲ့အခါ <b>"It is + Adjective"</b> ပုံစံကို သုံးရပါမယ်။ နာမ် (Noun) စကားလုံးတွေရဲ့ အနောက်မှာ <b>"-y"</b> ထည့်ပေးခြင်းဖြင့် Adjective ပြောင်းလဲနိုင်ပါတယ် [for example, 1.2.5]။
+        </p>
+        <div style="background: #f4f7f6; padding: 15px; border-radius: 8px; font-weight: 500; font-size: 14px;">
+            • Rain (မိုး - Noun) ➡️ It is <b>rainy</b> (မိုးရွာနေတယ် - Adjective)<br>
+            • Sun (နေ - Noun) ➡️ It is <b>sunny</b> (နေသာနေတယ် - Adjective)<br>
+            • Wind (လေ - Noun) ➡️ It is <b>windy</b> (လေတိုက်နေတယ် - Adjective)
+        </div>
+
+        <!-- ကဏ္ဍ (၄) - CEFR Exam Practice (A2 KET စာမေးပွဲပုံစံ လေ့ကျင့်ခန်း) -->
+        <h2 class="section-title">4. CEFR A2 Exam Practice</h2>
+        
+        <!-- Exercise 1 -->
+        <div class="exam-box">
+            <span class="badge-cefr">CEFR A2 Key • Part 1 Multiple Choice</span>
+            <h3>Read and choose the correct answer:</h3>
+            
+            <div class="question">
+                <p>1. Sarah is wearing her coat, scarf, and gloves because it is ________ outside today.</p>
+                <div class="options">
+                    <input type="radio" name="q1" value="A"> A) sunny and hot<br>
+                    <input type="radio" name="q1" value="B" id="correct1"> B) snowy and cold<br>
+                    <input type="radio" name="q1" value="C"> C) dry and warm
+                </div>
+            </div>
+
+            <div class="question">
+                <p>2. We cannot see the buildings clearly because it is very ________ this morning.</p>
+                <div class="options">
+                    <input type="radio" name="q2" value="A" id="correct2"> A) foggy<br>
+                    <input type="radio" name="q2" value="B"> B) sunny<br>
+                    <input type="radio" name="q2" value="C"> C) windy
+                </div>
+            </div>
+                <div class="question">
+                <p>3. It is very hot and the sun is shining. The weather is ________.</p>
+                <div class="options">
+                    <input type="radio" name="q3" value="A"> A) snowy<br>
+                    <input type="radio" name="q3" value="B"> B) foggy<br>
+                    <input type="radio" name="q3" value="C" id="correct3"> C) sunny
+                </div>
+            </div>
+                <div class="question">
+                <p>4. Take an umbrella. It is ________.</p>
+                <div class="options">
+                    <input type="radio" name="q4" value="A" id="correct4"> A) rainy<br>
+                    <input type="radio" name="q4" value="B"> B) windy<br>
+                    <input type="radio" name="q4" value="C"> C) snowy
+                </div>
+            </div>
+                <div class="question">
+                <p>5. The trees are moving because there is a lot of ________.</p>
+                <div class="options">
+                    <input type="radio" name="q5" value="A"> A) fog<br>
+                    <input type="radio" name="q5" value="B" id="correct5"> B) wind<br>
+                    <input type="radio" name="q5" value="C"> C) snow
+                </div>
+            </div>
+                <div class="question">
+                <p>6. I can't see the road clearly because it is ________.</p>
+                <div class="options">
+                    <input type="radio" name="q6" value="A" id="correct6"> A) foggy<br>
+                    <input type="radio" name="q6" value="B"> B) sunny<br>
+                    <input type="radio" name="q6" value="C"> C) hot
+                </div>
+            </div>
+                <div class="question">
+                <p>7. We can make a snowman when the weather is ________.</p>
+                <div class="options">
+                    <input type="radio" name="q7" value="A"> A) rainy<br>
+                    <input type="radio" name="q7" value="B" id="correct7"> B) snowy<br>
+                    <input type="radio" name="q7" value="C"> C) humid
+                </div>
+            </div>
+                <div class="question">
+                <p>8. There are many dark clouds and there is thunder. It is ________.</p>
+                <div class="options">
+                    <input type="radio" name="q8" value="A" id="correct8"> A) stormy<br>
+                    <input type="radio" name="q8" value="B"> B) sunny<br>
+                    <input type="radio" name="q8" value="C"> C) dry
+                </div>
+            </div>
+                <div class="question">
+                <p>9. Look at the trees! It is very ________ today, so it is a good day to fly a kite.</p>
+                <div class="options">
+                    <input type="radio" name="q9" value="A"> A) cloudy<br>
+                    <input type="radio" name="q9" value="B"> B) rainy<br>
+                    <input type="radio" name="q9" value="C" id="correct9"> C) windy
+                </div>
+            </div>
+                <div class="question">
+                <p>10. Take your umbrella with you because it is ________ heavily outside.</p>
+                <div class="options">
+                    <input type="radio" name="q10" value="A"> A) sunning<br>
+                    <input type="radio" name="q10" value="B" id="correct10"> B) raining<br>
+                    <input type="radio" name="q10" value="C"> C) blowing
+                </div>
+            </div>
+
+            <button class="btn-check" onclick="checkAnswers()">Check My Answers (အဖြေတိုက်ရန်)</button>
+            <p id="result-text" style="margin-top: 15px; font-weight: bold; color: #9e1c22;"></p>
+            </div>
+
+            <!-- ဘယ်ပြန်/ညာသွား ခလုတ်နှစ်ခု ဘေးချင်းယှဉ်ပြသသည့်ပုံစံ -->
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; border-top: 1px solid #eee; padding-top: 20px;">
+    
+            <!-- ဘယ်ဘက်သွားမည့်ခလုတ် (ရှေ့စာမျက်နှာသို့ ပြန်ပိတ်ရန်) -->
+            <a href="#" onclick="window.close();" style="color: #666; text-decoration: none; font-size: 14px; font-weight: 500;">
+            ⬅️ Back to Course Page
+            </a>
+
+            <!-- weather-lesson.html ၏ အောက်ခြေတွင် ဤကဲ့သို့ ပြင်ဆင်ပါ -->
+            <div style="text-align: right; margin-top: 40px; border-top: 1px solid #eee; padding-top: 20px;">
+            <a href="weather-exercise2.html" target="_blank" onclick="setTimeout(function(){window.close();}, 500);" style="background-color: #9e1c22; color: white; padding: 12px 25px; border-radius: 25px; text-decoration: none; font-size: 14px; font-weight: 600; display: inline-block;">
+        Next Exercise (နောက်လေ့ကျင့်ခန်း) ➡️
+            </a>
+</div>
+
+</div>
+
+</div>
+        
+
+    <!-- JavaScript For Interactive Quiz Checking -->
+    <script>
+        function checkAnswers() {
+            const q1 = document.getElementById('correct1').checked;
+            const q2 = document.getElementById('correct2').checked;
+            const q3 = document.getElementById('correct3').checked;
+            const q4 = document.getElementById('correct4').checked;
+            const q5 = document.getElementById('correct5').checked;
+            const q6 = document.getElementById('correct6').checked;
+            const q7 = document.getElementById('correct7').checked;
+            const q8 = document.getElementById('correct8').checked;
+            const q9 = document.getElementById('correct9').checked;
+            const q10 = document.getElementById('correct10').checked;
+            let score = 0;
+            
+            if(q1) score++;
+            if(q2) score++;
+            if(q3) score++;
+            if(q4) score++;
+            if(q5) score++;
+            if(q6) score++;
+            if(q7) score++;
+            if(q8) score++;
+            if(q9) score++;
+            if(q10) score++;
+            
+            const resultText = document.getElementById('result-text');
+            if(score === 10) {
+                resultText.style.color = "green";
+                resultText.innerHTML = "🎉 Excellent! 10/10 Correct. သင်ဖြေဆိုတာ အားလုံးမှန်ကန်ပါတယ်ဗျာ။";
+            } else {
+                resultText.style.color = "#9e1c22";
+                resultText.innerHTML = `⚠️ You got ${score}/10 correct. ကျေးဇူးပြု၍ မေးခွန်းများကို ထပ်မံဖတ်ရှုပြီး ပြန်လည်ကြိုးစားကြည့်ပါဦး။`;
+            }
+        }
+    </script>
+
+</body>
+</html>

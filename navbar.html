@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sumtu Garden International Academy</title>
+    
+    <!-- Poppins Font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+                /* Dropdown Menu တစ်ခုလုံးအတွက် Styling */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        /* နှိပ်လိုက်ရင် (သို့မဟုတ် မောက်စ်တင်ရင်) အောက်ကပွင့်လာမည့် သေတ္တာအကွက် */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #ffffff;
+            min-width: 750px; /* အုပ်စု ၃ စု ဘေးတိုက်ပြဖို့ အကျယ်ကြီး ထားပါမယ် */
+            box-shadow: 0px 8px 24px rgba(0,0,0,0.15);
+            border-radius: 8px;
+            padding: 20px;
+            z-index: 1000;
+            top: 100%;
+            left: 0;
+            
+            /* အုပ်စု ၃ စုကို ဘေးတိုက် ၃ ကော်လံ ခွဲပြရန် Flexbox သုံးခြင်း */
+            display: none;
+            justify-content: space-between;
+            text-align: left;
+        }
+
+        /* ပုံမှန်အချိန်မှာ ဖျောက်ထားပြီး Courses ကို နှိပ်ရင် သို့မဟုတ် hover လုပ်ရင် ပြရန် */
+        .dropdown:hover .dropdown-content {
+            display: flex;
+        }
+
+        /* Dropdown ထဲက အုပ်စု တစ်စုချင်းစီအတွက် Styling */
+        .course-group {
+            flex: 1;
+            padding: 0 15px;
+        }
+
+        .course-group:not(:last-child) {
+            border-right: 1px solid #eee; /* အုပ်စုများကြား မျဉ်းကြောင်းလေးခြားခြင်း */
+        }
+
+        .course-group h3 {
+            font-size: 14px;
+            color: #9e1c22; /* Logo ထဲက အနီရောင် */
+            margin-top: 0;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .course-group p {
+            font-size: 13px;
+            color: #666;
+            margin: 5px 0 12px 0;
+            font-weight: normal;
+        }
+
+        .course-level {
+            display: block;
+            padding: 8px 12px;
+            color: #1e3d59 !important;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-bottom: 5px;
+            transition: background 0.2s;
+        }
+
+        .course-level:hover {
+            background-color: #f4f7f6;
+            color: #ff6e40 !important;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            text-align: left;
+            padding: 50px;
+            margin: 0;
+        }
+
+        /* Navigation Bar Styling */
+        .navbar {
+            background-color: #ffffff; /* လိုဂိုပေါ်လွင်အောင် Nav Bar ကို အဖြူရောင်ပြောင်းထားပါတယ် */
+            padding: 10px 40px;
+            margin: -50px -50px 50px -50px;
+            width: calc(100% + 100px);
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0px 2px 10px rgba(0,0,0,0.05); /* အောက်ခြေကို အရိပ်နုနုလေး ထည့်ထားပါတယ် */
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+        }
+
+        /* လိုဂိုအကျယ်ကို ညှိခြင်း */
+        .logo {
+            height: 90px; /* လိုဂိုအမြင့်ကို သင့်တော်ရုံ ညှိထားပါတယ် */
+            width: auto;  /* အချိုးအစား မပျက်အောင် auto ထားပါတယ် */
+            margin-right: 30px;
+        }
+
+        .nav-links a {
+            color: #1e3d59; /* စာသားကို အပြာရင့်ရောင် ပြောင်းထားပါတယ် */
+            text-decoration: none;
+            padding: 10px 15px;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .nav-auth {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-auth a {
+            color: #1e3d59;
+            text-decoration: none;
+            padding: 10px 15px;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .nav-links a:hover, .nav-auth a:hover {
+            color: #ff6e40;
+        }
+
+        /* Search Box */
+        .search-box {
+            padding: 8px 15px;
+            font-size: 14px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            margin-right: 15px;
+            font-family: 'Poppins', sans-serif;
+            outline: none;
+        }
+
+        /* Banner Box */
+        .hero-section {
+            margin-top: 80px;
+            margin-bottom: 40px;
+        }
+        .btn {
+            background-color: #9e1c22; /* သင့် Logo ထဲက အနီရင့်ရောင်နဲ့ ကိုက်ညီအောင် ပြောင်းထားပါတယ် */
+            color: white;
+            padding: 14px 35px;
+            font-size: 16px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            font-weight: 600;
+            box-shadow: 0px 4px 15px rgba(158, 28, 34, 0.3);
+        }
+        .btn:hover {
+            background-color: #7a1519;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar Menu -->
+<div class="navbar">
+        <div class="nav-left">
+            <!-- သင့်ရဲ့ ကိုယ်ပိုင် Logo ပုံကို ညွှန်းထားခြင်း -->
+            <img src="logo.png" class="logo" alt="Sumtu Garden Logo">
+            
+            <div class="nav-links">
+                <a href="#">Home</a>
+                            <!-- Courses နေရာကို Dropdown အဖြစ် ပြောင်းလဲခြင်း -->
+            <div class="dropdown">
+                <a href="#">English Courses ▾</a>
+                
+                <!-- အောက်သို့ ကျလာမည့် အုပ်စု ၃ စု -->
+                <div class="dropdown-content">
+                    
+                    <!-- အုပ်စု ၁ -->
+                    <div class="course-group">
+                        <h3>Basic User</h3>
+                        <p>(အခြေခံအဆင့်)</p>
+                        <a href="#" class="course-level"><b>A1</b> - Beginner</a>
+                        <a href="a2-practise.html" target="_blank"class="course-level"><b>A2</b> - Elementary</a>
+                    </div>
+
+                    <!-- အုပ်စု ၂ -->
+                    <div class="course-group">
+                        <h3>Independent User</h3>
+                        <p>(အလယ်အလတ်ဆင့်)</p>
+                        <a href="#" class="course-level"><b>B1</b> - Intermediate</a>
+                        <a href="#" class="course-level"><b>B2</b> - Upper-Intermediate</a>
+                    </div>
+
+                    <!-- အုပ်စု ၃ -->
+                    <div class="course-group">
+                        <h3>Proficient User</h3>
+                        <p>(ကျွမ်းကျင်အဆင့်)</p>
+                        <a href="#" class="course-level"><b>C1</b> - Advanced</a>
+                        <a href="#" class="course-level"><b>C2</b> - Proficient / Mastery</a>
+                    </div>
+
+                </div>
+            </div>
+                <!-- GED Dropdown အစ -->
+<div class="dropdown">
+    <a href="#">GED ▾</a>
+    
+    <div class="dropdown-content">
+        
+        <!-- အုပ်စု ၁ -->
+        <div class="course-group">
+            <h3>Starter</h3>
+            <a href="ielts-foundation.html" class="course-level"><b>IELTS</b> - Foundation</a>
+        </div>
+
+        <!-- အုပ်စု ၂ -->
+        <div class="course-group">
+            <h3>Professional</h3>
+            <!-- ဒီနေရာမှာ ကျန်တဲ့ သင်တန်းအဆင့်တွေ ဆက်ရေးနိုင်ပါတယ် -->
+        </div>
+
+    </div>
+</div>
+<!-- GED Dropdown အဆုံး -->
+
+                <!-- IGCSE Dropdown အစ -->
+<div class="dropdown">
+    <a href="#">IGCSE ▾</a>
+    
+    <div class="dropdown-content">
+        
+        <!-- အုပ်စု ၁ -->
+        <div class="course-group">
+            <h3>Starter</h3>
+            <a href="ielts-foundation.html" class="course-level"><b>IELTS</b> - Foundation</a>
+        </div>
+
+        <!-- အုပ်စု ၂ -->
+        <div class="course-group">
+            <h3>Professional</h3>
+            <!-- ဒီနေရာမှာ ကျန်တဲ့ သင်တန်းအဆင့်တွေ ဆက်ရေးနိုင်ပါတယ် -->
+        </div>
+
+    </div>
+</div>
+<!-- IGCSE Dropdown အဆုံး -->
+
+<!-- IELTS Dropdown အစ -->
+<div class="dropdown">
+    <a href="#">IELTS ▾</a>
+    
+    <div class="dropdown-content">
+        
+        <!-- အုပ်စု ၁ -->
+        <div class="course-group">
+            <h3>Starter</h3>
+            <a href="ielts-foundation.html" class="course-level"><b>IELTS</b> - Foundation</a>
+        </div>
+
+        <!-- အုပ်စု ၂ -->
+        <div class="course-group">
+            <h3>Professional</h3>
+            <a href="ielts-practice.html" class="course-level"><b>IELTS</b> - Preparation</a>
+            <!-- ဒီနေရာမှာ ကျန်တဲ့ သင်တန်းအဆင့်တွေ ဆက်ရေးနိုင်ပါတယ် -->
+        </div>
+        <!-- အုပ်စု ၃ -->
+        <div class="course-group">
+            <h3>Premium</h3>
+            <a href="ielts-practice.html" class="course-level"><b>IELTS</b> - Intenisive</a>
+            <!-- ဒီနေရာမှာ ကျန်တဲ့ သင်တန်းအဆင့်တွေ ဆက်ရေးနိုင်ပါတယ် -->
+        </div>
+
+    </div>
+</div>
+<!-- IELTS Dropdown အဆုံး -->
+                <a href="#">Level Test</a>
+            </div>
+        </div>
+
+        <div class="nav-auth">
+            <input type="text" class="search-box" placeholder="Search course...">
+            <a href="#">Login</a>
+            <a href="#">Register</a>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A2 Elementary Practice Portal - Sumtu Garden</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            padding: 40px 20px;
+            margin: 0;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 80px auto 40px auto; /* Fixed Navbar အောက်သို့ ရောက်ရန် Margin ထားခြင်း */
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0px 10px 30px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        
+        /* Portals Grid Style */
+        .portal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        
+        .portal-card {
+            background: #ffffff;
+            border: 1px solid #eef2f5;
+            border-radius: 16px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .portal-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            border-color: #1e3d59;
+        }
+        
+        .portal-icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+        
+        .portal-card h3 {
+            color: #1e3d59;
+            margin: 0 0 10px 0;
+            font-size: 20px;
+            font-weight: 700;
+        }
+        
+        .portal-card p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 0 0 25px 0;
+        }
+        
+        .portal-btn {
+            background-color: #1e3d59;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.2s;
+            display: inline-block;
+        }
+        
+        .portal-btn:hover {
+            background-color: #9e1c22; /* Hover လုပ်လျှင် ကျောင်းအရောင် နီညိုရောင် ပြောင်းလဲမည် */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- navbar.html ကို အလိုအလျောက် ဆွဲခေါ်မည့် နေရာ -->
+    <div id="navbar-container"></div>
+
+    <div class="container">
+        <span style="color: #9e1c22; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">A2 Elementary Tier</span>
+        <h1 style="color: #1e3d59; margin: 5px 0 10px 0; font-size: 32px;">🎓 A2 Learning & Practice Portal</h1>
+        <p style="color: #666; font-size: 15px; max-width: 650px; margin: 0 auto;">
+            Welcome to the Elementary Learning Hub. Select a portal below to start your lessons and CEFR exam exercises. (လေ့လာလိုသည့် ကဏ္ဍပေါ်မူတည်၍ Portal ကို ရွေးချယ်ပါ)။
+        </p>
+
+        <!-- Portals Grid ခွဲခြားမှု (၃) ခု -->
+        <div class="portal-grid">
+            
+            <!-- ၁။ Reading and Writing Portal -->
+            <div class="portal-card">
+                <div>
+                    <div class="portal-icon">📖</div>
+                    <h3>Reading & Writing</h3>
+                    <p>Improve your comprehension skills through short real-world texts, audio clips, and KET exam format gap-fills.</p>
+                </div>
+                <a href="a2-reading-writing.html" target="_blank" class="portal-btn">Enter Reading & Writing Hub ➡️</a>
+            </div>
+
+            <!-- ၂။ Writing Portal -->
+            <div class="portal-card">
+                <div>
+                    <div class="portal-icon">📝</div>
+                    <h3>Listening Portal</h3>
+                    <p>Master guided emails and short story creations based on picture prompts to score high in CEFR A2 tests.</p>
+                </div>
+                <a href="a2-listening.html" target="_blank" class="portal-btn">Enter Listening Hub ➡️</a>
+            </div>
+
+            <!-- ၃။ Speaking Portal -->
+            <div class="portal-card">
+                <div>
+                    <div class="portal-icon">🗣️</div>
+                    <h3>Speaking Portal</h3>
+                    <p>Build confidence for everyday conversations, simple interview dialogues, and collaborative peer interactive work.</p>
+                </div>
+                <a href="a2-speaking.html" target="_blank" class="portal-btn">Enter Speaking Hub ➡️</a>
+            </div>
+
+        
+            <!-- Grammar Portal -->
+            <div class="portal-card">
+                <div>
+                    <div class="portal-icon">📙</div>
+                    <h3>Grammar Portal</h3>
+                    <p>Master the key A2 grammar rules with clear explanations, examples, and easy practice for exams.</p>
+                </div>
+                <a href="a2-grammar.html" target="_blank" class="portal-btn">Enter Grammar Hub</a>
+            </div>
+
+</div>
+
+        <!-- အောက်ခြေပြန်လှည့်ရန်ခလုတ် -->
+        <div style="margin-top: 50px; border-top: 1px solid #eee; padding-top: 20px;">
+            <a href="#" onclick="window.close();" style="color: #666; text-decoration: none; font-size: 14px; font-weight: 500;">
+                ⬅️ Close and Return to Home
+            </a>
+        </div>
+    </div>
+
+    <!-- navbar.html ကို ဆွဲခေါ်မည့် Script -->
+    <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A2 Grammar - Sumtu Garden</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            padding: 40px 20px;
+            margin: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 80px auto 40px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0px 10px 30px rgba(0,0,0,0.05);
+        }
+        .skill-tag {
+            display: inline-block;
+            background: #eef2f5;
+            color: #1e3d59;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+        }
+        h1 {
+            color: #9e1c22;
+            font-weight: 700;
+            margin: 5px 0 10px 0;
+            font-size: 30px;
+        }
+        .subtitle {
+            color: #666;
+            font-size: 15px;
+            margin-bottom: 30px;
+        }
+        .grammar-box {
+            background: #fffaf0;
+            border: 1px solid #ffd9a8;
+            border-radius: 12px;
+            padding: 22px;
+            margin: 20px 0;
+            line-height: 1.9;
+        }
+        .grammar-box b { color: #1e3d59; }
+        .example {
+            background: #eef9f4;
+            border-left: 4px solid #17b890;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin: 15px 0;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 40px;
+            color: #1e3d59;
+            text-decoration: none;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="navbar-container"></div>
+    <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+                const container = document.querySelector('.container');
+                if (container) { container.style.marginTop = '80px'; }
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+    </script>
+
+    <div class="container">
+        <span class="skill-tag">🧠 Grammar Sector</span>
+        <h1>A2 Essential Grammar</h1>
+        <p class="subtitle">
+            Learn the key grammar rules you need for daily communication at the A2 (Elementary) level. (A2 အဆင့်အတွက် အဓိကကျတဲ့ သဒ္ဒါစည်းမျဉ်းများ)
+        </p>
+
+        <!-- Grammar 1 -->
+        <h2 style="color:#1e3d59; font-size:22px; font-weight:700; border-left:4px solid #9e1c22; padding-left:15px;">1. Present Simple vs Present Continuous</h2>
+        <div class="grammar-box">
+            <p style="margin-top:0;"><b>Present Simple</b> — for routines, facts and habits. <i>(ပုံမှန်လုပ်နေကျအရာများ)</i> e.g. <b>"I work every day."</b></p>
+            <p><b>Present Continuous</b> — for actions happening now. <i>(အခုဖြစ်ပျက်နေသောအရာများ)</i> e.g. <b>"I am working now."</b></p>
+        </div>
+
+        <!-- Grammar 2 -->
+        <h2 style="color:#1e3d59; font-size:22px; font-weight:700; border-left:4px solid #9e1c22; padding-left:15px; margin-top:45px;">2. Past Simple (Regular & Irregular)</h2>
+        <div class="grammar-box">
+            <p style="margin-top:0;"><b>Regular verbs:</b> add <i>-ed</i> → <b>"play" → "played"</b></p>
+            <p><b>Irregular verbs:</b> change → <b>"go" → "went"</b>, <b>"eat" → "ate"</b></p>
+            <div class="example">
+                <p style="margin:0;">✅ "Yesterday, I <b>played</b> football and I <b>went</b> to the market."</p>
+            </div>
+        </div>
+
+        <!-- Grammar 3 -->
+        <h2 style="color:#1e3d59; font-size:22px; font-weight:700; border-left:4px solid #9e1c22; padding-left:15px; margin-top:45px;">3. Future: "Going to" vs "Will"</h2>
+        <div class="grammar-box">
+            <p style="margin-top:0;"><b>"Going to"</b> — for plans already made. <i>(ကြိုတင်စီစဉ်ထားသောအရာ)</i> e.g. <b>"I am going to visit my friend tomorrow."</b></p>
+            <p><b>"Will"</b> — for quick decisions and predictions. <i>(လွယ်ကူသောဆုံးဖြတ်ချက်နှင့် ခန့်မှန်းချက်)</i> e.g. <b>"I think it will rain."</b></p>
+        </div>
+
+        <!-- Grammar 4 -->
+        <h2 style="color:#1e3d59; font-size:22px; font-weight:700; border-left:4px solid #9e1c22; padding-left:15px; margin-top:45px;">4. Modal Verbs (Can, Could, Would)</h2>
+        <div class="grammar-box">
+            <p style="margin-top:0;"><b>Can</b> = ability <i>(စွမ်းရည်)</i> — "I <b>can</b> swim."</p>
+            <p><b>Could</b> = polite request / past ability — "<b>Could</b> you help me?"</p>
+            <p><b>Would</b> = polite offers — "<b>Would</b> you like some tea?"</p>
+        </div>
+
+        <br>
+        <a href="a2-practise.html" class="back-link">← Back to A2 Practice Portal</a>
+    </div>
+
+</body>
+</html>

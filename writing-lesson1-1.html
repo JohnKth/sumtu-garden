@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speaking Lesson 1.1 - Sumtu Garden</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 20px rgba(0,0,0,0.05);
+        }
+        h1 { color: #9e1c22; font-weight: 700; margin-bottom: 5px; }
+        .subtitle { color: #1e3d59; font-size: 16px; margin-bottom: 30px; font-weight: 500; }
+        
+        /* Framework Steps Layout */
+        .framework-box {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 25px;
+            margin-bottom: 35px;
+        }
+        .step-card {
+            background: #f9f9f9;
+            padding: 15px 20px;
+            border-radius: 8px;
+            border-left: 4px solid #1e3d59;
+        }
+        .step-card h4 { margin: 0 0 5px 0; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .step-card.s1 { border-left-color: #17b890; h4 { color: #17b890; } }
+        .step-card.s2 { border-left-color: #3498db; h4 { color: #3498db; } }
+        .step-card.s3 { border-left-color: #ff6e40; h4 { color: #ff6e40; } }
+        .step-card.s4 { border-left-color: #9e1c22; h4 { color: #9e1c22; } }
+        
+        .section-title { color: #1e3d59; border-bottom: 2px solid #eee; padding-bottom: 8px; margin-top: 35px; }
+        .example-box { background-color: #fffaf0; border: 1px dashed #ff6e40; padding: 25px; border-radius: 8px; line-height: 1.8; }
+        
+        .back-link { display: inline-block; margin-top: 40px; color: #1e3d59; text-decoration: none; font-weight: 600; }
+    </style>
+</head>
+<body>
+<!-- navbar.html ကို အလိုအလျောက် ဆွဲခေါ်မည့် နေရာအမှန် -->
+    <div id="navbar-container"></div>
+    <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            });
+    </script>
+    <div class="container">
+        <h1>Lesson 1.1: The 4-Step Answer Framework</h1>
+        <p class="subtitle">IELTS Part 1 မေးခွန်းတိုများကို အဆင့်ဆင့် စနစ်တကျ အရှည်ဆန့်ပြောဆိုနည်း</p>
+        
+        <p>IELTS Speaking Part 1 မှာ မေးခွန်းတစ်ခုကို "Yes/No" သို့မဟုတ် စာကြောင်းတိုလေး တစ်ကြောင်းတည်းနဲ့ ဖြေဆိုရင် အမှတ်နည်းတတ်ပါတယ်။ အဖြေကို သဘာဝကျကျ အရှည်ဆန့်ထုတ်ဖို့ အောက်ပါ <b>4-Step Framework</b> ကို သုံးရပါမယ်။</p>
+
+        <!-- THE 4 STEPS STRUCTURE -->
+        <div class="framework-box">
+            <div class="step-card s1">
+                <h4>Step 1: Direct Answer (တိုက်ရိုက်အဖြေ)</h4>
+                <p style="margin:0; font-size:14px; color:#555;">မေးခွန်းကို Yes သို့မဟုတ် No ဖြင့် တိုက်ရိုက်ရှင်းလင်းစွာ အရင်ဆုံး ဖြေဆိုပါ။</p>
+            </div>
+            <div class="step-card s2">
+                <h4>Step 2: Give a Reason (အကြောင်းပြချက်)</h4>
+                <p style="margin:0; font-size:14px; color:#555;">ဘာကြောင့် အဲဒီလို ဖြေရလဲဆိုတဲ့ အဓိက အကြောင်းရင်းကို "Because..." သို့မဟုတ် "Since..." ခံပြီး ထည့်ပါ။</p>
+            </div>
+            <div class="step-card s3">
+                <h4>Step 3: Provide an Example (ဥပမာပေးခြင်း)</h4>
+                <p style="margin:0; font-size:14px; color:#555;">မိမိအကြောင်းအရာ သို့မဟုတ် အတိတ်က အတွေ့အကြုံ ဥပမာတစ်ခုကို "For instance..." ဖြင့် ဖော်ပြပါ။</p>
+            </div>
+            <div class="step-card s4">
+                <h4>Step 4: Concession / Alternative (ဆန့်ကျင်ဘက် သို့မဟုတ် အခြားအခြေအနေ)</h4>
+                <p style="margin:0; font-size:14px; color:#555;">"However..." သို့မဟုတ် "On the other hand..." သုံးပြီး ဆန့်ကျင်ဘက် အခြေအနေတစ်ခုပြကာ အဆုံးသတ်ပါ။</p>
+            </div>
+        </div>
+
+        <!-- MOCK EXAMPLE IN ACTION -->
+        <h2 class="section-title">💡 Example in Action (လက်တွေ့ဥပမာ)</h2>
+        <div class="example-box">
+            <p style="margin-top:0; font-weight:600; color:#1e3d59;">❓ Examiner Question: Do you like reading books?</p>
+            <p style="margin-bottom:0;">
+                <span style="color:#17b890; font-weight:600;">[Direct]</span> "Yes, absolutely! I am quite passionate about reading books. <br>
+                <span style="color:#3498db; font-weight:600;">[Reason]</span> ...mainly because it allows me to expand my knowledge and escape from daily stress. <br>
+                <span style="color:#ff6e40; font-weight:600;">[Example]</span> ...For instance, I love diving into self-help genres every single night before going to bed. <br>
+                <span style="color:#9e1c22; font-weight:600;">[Concession]</span> ...However, due to my heavy work schedule nowadays, I don't read as much as I used to."
+            </p>
+        </div>
+
+        <br>
+        <a href="speaking-hub.html" class="back-link">← Back to Speaking Hub</a>
+    </div>
+
+</body>
+</html>

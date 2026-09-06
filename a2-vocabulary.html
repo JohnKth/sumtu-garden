@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A2 Vocabulary - Weather</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            padding: 40px 20px;
+            margin: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 80px auto 40px auto; /* ဤနေရာတွင် 80px ဟု ပြောင်းလဲပေးပါ */
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0px 10px 30px rgba(0,0,0,0.05);
+        }
+        .group-title {
+            color: #1e3d59;
+            font-size: 20px;
+            font-weight: 700;
+            border-left: 5px solid #9e1c22;
+            padding-left: 15px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        .vocab-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+        }
+        .vocab-card {
+            background: #fff;
+            border: 1px solid #eef2f5;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .vocab-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+        }
+        .vocab-img {
+            height: 70px;
+            width: auto;
+            margin-bottom: 12px;
+            object-fit: contain;
+        }
+        .vocab-card b {
+            color: #1e3d59;
+            font-size: 16px;
+            display: block;
+            margin-bottom: 4px;
+        }
+        .vocab-card i {
+            font-size: 12px;
+            color: #9e1c22;
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+        .vocab-card span {
+            font-size: 13px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+ <!-- navbar.html ကို အလိုအလျောက် ဆွဲခေါ်မည့် နေရာအမှန် -->
+    <div id="navbar-container"></div>
+    <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            });
+    </script>
+    
+    <div class="container">
+        <span style="color: #9e1c22; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">A2 English Course • Vocabulary Sector</span>
+        <h1 style="color: #1e3d59; margin: 5px 0 10px 0; font-size: 30px;">🌦️ Weather Vocabulary</h1>
+        <p style="color: #666; font-size: 14px; margin-bottom: 30px;">Learn key words to talk about the weather conditions and temperatures. (မိုးလေဝသနှင့် ရာသီဥတုဆိုင်ရာ အခြေခံစကားလုံးများ)။</p>
+
+        <!-- ========================================== -->
+        <!-- အုပ်စု (၁) - Core Weather Elements (နာမ်စကားလုံးများ) -->
+        <!-- ========================================== -->
+        <div class="group-title">1. Weather Elements (Nouns)</div>
+        <div class="vocab-grid">
+            <div class="vocab-card"><img src="images/weather.png" class="vocab-img" alt="Weather"><b>weather</b><i>noun</i><span>မိုးလေဝသ / ရာသီဥတု</span></div>
+            <div class="vocab-card"><img src="images/sun.png" class="vocab-img" alt="Sun"><b>sun</b><i>noun</i><span>နေမင်း / နေ</span></div>
+            <div class="vocab-card"><img src="images/rain.png" class="vocab-img" alt="Rain"><b>rain</b><i>noun</i><span>မိုး / မိုးရေ</span></div>
+            <div class="vocab-card"><img src="images/cloud.png" class="vocab-img" alt="Cloud"><b>cloud</b><i>noun</i><span>တိမ်တိုက် / တိမ်</span></div>
+            <div class="vocab-card"><img src="images/wind.png" class="vocab-img" alt="Wind"><b>wind</b><i>noun</i><span>လေ / လေပြေ</span></div>
+            <div class="vocab-card"><img src="images/snow.png" class="vocab-img" alt="Snow"><b>snow</b><i>noun</i><span>နှင်း / ဆီးနှင်း</span></div>
+            <div class="vocab-card"><img src="images/fog.png" class="vocab-img" alt="Fog"><b>fog</b><i>noun</i><span>မြူ / နှင်းမြူ</span></div>
+            <div class="vocab-card"><img src="images/ice.png" class="vocab-img" alt="Ice"><b>ice</b><i>noun</i><span>ရေခဲ</span></div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- အုပ်စု (၂) - Describing Weather (နာမဝိသေသနများ) -->
+        <!-- ========================================== -->
+        <div class="group-title">2. Describing Weather (Adjectives)</div>
+        <div class="vocab-grid">
+            <div class="vocab-card"><img src="images/sunny.png" class="vocab-img" alt="Sunny"><b>sunny</b><i>adjective</i><span>နေသာသော</span></div>
+            <div class="vocab-card"><img src="images/cloudy.png" class="vocab-img" alt="Cloudy"><b>cloudy</b><i>adjective</i><span>တိမ်ထူသော</span></div>
+            <div class="vocab-card"><img src="images/windy.png" class="vocab-img" alt="Windy"><b>windy</b><i>adjective</i><span>လေပြင်းတိုက်သော</span></div>
+            <div class="vocab-card"><img src="images/foggy.png" class="vocab-img" alt="Foggy"><b>foggy</b><i>adjective</i><span>မြူဆိုင်းသော</span></div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- အုပ်စု (၃) - Temperature & State (အပူချိန်နှင့် အခြေအနေ) -->
+        <!-- ========================================== -->
+        <div class="group-title">3. Temperature & Conditions</div>
+        <div class="vocab-grid">
+            <div class="vocab-card"><img src="images/hot.png" class="vocab-img" alt="Hot"><b>hot</b><i>adjective</i><span>ပူပြင်းသော</span></div>
+            <div class="vocab-card"><img src="images/warm.png" class="vocab-img" alt="Warm"><b>warm</b><i>adjective</i><span>နွေးထွေးသော</span></div>
+            <div class="vocab-card"><img src="images/cold.png" class="vocab-img" alt="Cold"><b>cold</b><i>adjective</i><span>အေးမြသော</span></div>
+            <div class="vocab-card"><img src="images/wet.png" class="vocab-img" alt="Wet"><b>wet</b><i>adjective</i><span>စိုစွတ်သော</span></div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- အုပ်စု (၄) - Stormy Weather (မုန်တိုင်းထန်သော အခြေအနေ) -->
+        <!-- ========================================== -->
+        <div class="group-title">4. Stormy Weather</div>
+        <div class="vocab-grid">
+            <div class="vocab-card"><img src="images/storm.png" class="vocab-img" alt="Storm"><b>storm</b><i>noun</i><span>မုန်တိုင်း</span></div>
+            <div class="vocab-card"><img src="images/stormy.png" class="vocab-img" alt="Stormy"><b>stormy</b><i>adjective</i><span>မုန်တိုင်းထန်သော</span></div>
+            <div class="vocab-card"><img src="images/thunderstorm.png" class="vocab-img" alt="Thunderstorm"><b>thunderstorm</b><i>noun</i><span>မိုးသက်မုန်တိုင်း</span></div>
+        </div>
+
+        <!-- အောက်ခြေခလုတ် -->
+        <div style="margin-top: 50px; border-top: 1px solid #eee; padding-top: 20px; text-align: center;">
+            <a href="#" onclick="window.close();" style="color: #666; text-decoration: none; font-size: 14px; font-weight: 500;">
+                ⬅️ Close and Return to Main Course
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

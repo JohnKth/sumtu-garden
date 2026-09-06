@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A2 Speaking Portal - Sumtu Garden</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            padding: 40px 20px;
+            margin: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 80px auto 40px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0px 10px 30px rgba(0,0,0,0.05);
+        }
+        
+        /* Menu Tab Switches layout style */
+        .speaking-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 30px 0;
+        }
+        .speaking-btn {
+            background: #fff;
+            border: 2px solid #1e3d59;
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            color: #1e3d59;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .speaking-btn:hover { background: #f4f7f6; color: #ff6e40; }
+        .active-speaking-tab { background: #1e3d59 !important; color: #fff !important; }
+        
+        /* Target Panels dynamic layout */
+        .speaking-panel {
+            display: none;
+            background: #fffdfa;
+            border: 1px solid #ffe6cc;
+            border-radius: 15px;
+            padding: 35px;
+            margin-top: 25px;
+            text-align: left;
+            animation: slideUp 0.4s ease forwards;
+        }
+        .info-card {
+            background: white;
+            border: 1px solid #eee;
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        .info-title {
+            color: #9e1c22;
+            font-weight: 700;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+/* Vocabulary Topic Layout */
+.vocab-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
+    margin-top: 25px;
+}
+
+/* Topic Card Style */
+.topic-card {
+    background: #fff;
+    border: 2px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 20px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.01);
+}
+.topic-card:hover {
+    border-color: #1e3d59;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.04);
+}
+.topic-card.active-topic {
+    background: #1e3d59;
+    border-color: #1e3d59;
+    color: #fff;
+}
+.topic-icon {
+    font-size: 32px;
+    display: block;
+    margin-bottom: 10px;
+}
+.topic-name {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* Words Display Panel Style */
+.words-display-panel {
+    display: none; /* Initially hidden */
+    margin-top: 30px;
+    background: #fff;
+    border: 1px solid #ffe6cc;
+    border-radius: 16px;
+    padding: 20px;
+    animation: fadeIn 0.4s ease forwards;
+}
+.words-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* Individual Word Block */
+.word-block {
+    background: #f8fafc;
+    border-left: 4px solid #1e3d59;
+    border-radius: 0 12px 12px 0;
+    padding: 14px 16px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.01);
+}
+.word-main-line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+.word-text {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1e3d59;
+}
+.word-meta {
+    font-size: 13px;
+    color: #64748b;
+}
+.pos-badge {
+    background: #e2e8f0;
+    color: #334155;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 600;
+    margin-right: 5px;
+}
+.audio-btn {
+    background: #1e3d59;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    font-size: 11px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 6px;
+}
+.audio-btn:hover { background: #ff6e40; }
+.word-meaning {
+    font-size: 14px;
+    color: #334155;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+.word-example {
+    font-size: 13px;
+    color: #64748b;
+    font-style: italic;
+    border-top: 1px dashed #e2e8f0;
+    padding-top: 6px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Grammar Section Layout */
+.grammar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+.grammar-card {
+    background: #fff;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 18px;
+    cursor: pointer;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s ease;
+}
+.grammar-card:hover {
+    border-color: #9e1c22;
+    background: #fffdfa;
+}
+.grammar-card.active-grammar {
+    background: #9e1c22;
+    border-color: #9e1c22;
+    color: #fff;
+}
+.grammar-card.active-grammar .gm-title {
+    color: #fff;
+}
+
+/* Grammar View Panel */
+.grammar-display-panel {
+    display: none;
+    margin-top: 25px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    animation: slideUp 0.4s ease forwards;
+}
+.gm-content-block {
+    background: #fdfbf7;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-left: 4px solid #9e1c22;
+}
+.gm-sub {
+    font-weight: 700;
+    color: #9e1c22;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+.gm-text {
+    font-size: 15px;
+    color: #333;
+    line-height: 1.6;
+}
+/* Part 1 Q&A and Vocabulary Layout Styling */
+.qa-wrapper {
+    margin-top: 20px;
+}
+.qa-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.01);
+}
+.qa-topic-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #9e1c22;
+    border-bottom: 2px solid #f4f7f6;
+    padding-bottom: 6px;
+    margin-bottom: 15px;
+}
+.qa-item {
+    margin-bottom: 15px;
+}
+.qa-item:last-child {
+    margin-bottom: 0;
+}
+.qa-question {
+    font-weight: 600;
+    color: #1e3d59;
+    font-size: 15px;
+}
+.qa-answer {
+    font-size: 14px;
+    color: #4a5568;
+    background: #f8fafc;
+    padding: 10px 12px;
+    border-radius: 6px;
+    margin-top: 6px;
+    line-height: 1.5;
+}
+.vocab-chunks-box {
+    background: #fffdf5;
+    border: 1px dashed #ffe6cc;
+    border-radius: 8px;
+    padding: 12px;
+    margin-top: 10px;
+}
+.chunks-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #ff6e40;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+.chunks-list {
+    font-size: 13px;
+    color: #4a5568;
+    line-height: 1.5;
+}
+.chunks-list b {
+    color: #1e3d59;
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- navbar.html structure pulls dynamically here -->
+    <div id="navbar-container"></div>
+
+        <div class="container">
+        <span style="color: #9e1c22; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">A2 Speaking Portal • CEFR Framework</span>
+        <h1 style="color: #1e3d59; margin: 5px 0 10px 0; font-size: 32px;">🗣️ Speaking Test Structure</h1>
+        
+        <!-- =================================================== -->
+        <!-- FORMATS MOVED DIRECTLY UNDER STRUCTURE TITLE         -->
+        <!-- =================================================== -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 15px; margin-bottom: 25px;">
+            <!-- Part 1 Format info -->
+            <div class="info-card" style="margin-bottom: 0; border-left: 4px solid #1e3d59;">
+                <div class="info-title">💬 Part 1 (Interview) Format (3–4 mins)</div>
+                <p style="font-size: 13px; color: #555; margin: 5px 0 0 0;"><b>Task:</b> Respond directly to the examiner's questions, giving accurate everyday personal information.</p>
+            </div>
+            <!-- Part 2 Format info -->
+            <div class="info-card" style="margin-bottom: 0; border-left: 4px solid #ff6e40;">
+                <div class="info-title">👥 Part 2 (Discussion) Format (5–6 mins)</div>
+                <p style="font-size: 13px; color: #555; margin: 5px 0 0 0;"><b>Task:</b> Discuss personal likes, dislikes, and choices relative to a given prompt with your partner candidate.</p>
+            </div>
+        </div>
+
+        <p style="color: #666; font-size: 15px; margin-bottom: 30px;">Build active test confidence and master exam structures. (ကဏ္ဍများကို နှိပ်၍ စာမေးပွဲ လေ့ကျင့်ခန်းများကို လေ့လာပါ)။</p>
+
+        <!-- Dynamic Menu Category Buttons -->
+        <div class="speaking-grid">
+            <button onclick="switchSpeakingTab('part1-panel')" class="speaking-btn">💬 Part 1 (Interview)</button>
+            <button onclick="switchSpeakingTab('part2-panel')" class="speaking-btn">👥 Part 2 (Discussion)</button>
+            <button onclick="switchSpeakingTab('part3-panel')" class="speaking-btn">📚 Vocabulary</button>
+            <button onclick="switchSpeakingTab('part4-panel')" class="speaking-btn">📝 Grammar</button>
+        </div>
+
+                <!-- ========================================== -->
+        <!-- PANEL 1: PART 1 INTERVIEW (TOPIC GRID)     -->
+        <!-- ========================================== -->
+        <div id="part1-panel" class="speaking-panel">
+            <h2 style="color: #1e3d59; margin-top: 0;">💬 Part 1 Interview Topics</h2>
+            <p style="color: #666; font-size: 14px; margin-bottom: 25px;">Select a topic below to practice actual exam interview questions and answers. (လေ့လာလိုသော ခေါင်းစဉ်ကို နှိပ်၍ မေးခွန်းနှင့် အဖြေများကို လေ့လာပါ)။</p>
+            
+            <!-- Vocabulary ပုံစံအတိုင်း ပြုလုပ်ထားသော ကတ်ပြားများ -->
+            <div class="vocab-grid">
+                <!-- Topic 1 Card -->
+                <div class="topic-card" onclick="location.href='part1-personal.html';">
+                    <span class="topic-icon">💻</span>
+                    <span class="topic-name">Personal information</span>
+                </div>
+                <!-- Topic 2 Card -->
+                <div class="topic-card" onclick="location.href='part1-hobbies.html';">
+                    <span class="topic-icon">🎒</span>
+                    <span class="topic-name">Hobbies & Free Time</span>
+                </div>
+                <!-- Topic 3 Card -->
+                <div class="topic-card" onclick="location.href='part1-school.html';">
+                    <span class="topic-icon">🏫</span>
+                    <span class="topic-name">School & Studies</span>
+                </div>
+                <!-- Topic 4 Card -->
+                <div class="topic-card" onclick="location.href='part1-family.html';">
+                    <span class="topic-icon">👨‍👩‍👧‍👦</span>
+                    <span class="topic-name">Family </span>
+                </div>
+                <!-- Topic 5 Card -->
+                <div class="topic-card" onclick="location.href='part1-daily.html';">
+                    <span class="topic-icon">⏰</span>
+                    <span class="topic-name">Daily Routines</span>
+                </div>
+                <!-- Topic 6 Card -->
+                <div class="topic-card" onclick="location.href='part1-daily.html';">
+                    <span class="topic-icon">⚽</span>
+                    <span class="topic-name">Sports</span>
+                </div>
+                <!-- Topic 7 Card -->
+                <div class="topic-card" onclick="location.href='part1-daily.html';">
+                    <span class="topic-icon">🍽️</span>
+                    <span class="topic-name">Food and Drink</span>
+                </div>
+                <!-- Topic 8 Card -->
+                <div class="topic-card" onclick="location.href='part1-daily.html';">
+                    <span class="topic-icon">🌤️</span>
+                    <span class="topic-name">Weather and Season</span>
+                </div>
+                <!-- Topic 9 Card -->
+                <div class="topic-card" onclick="location.href='part1-shopping.html';">
+                    <span class="topic-icon">🛍️</span>
+                    <span class="topic-name">Shopping</span>
+                </div>
+                <!-- Topic 10 Card -->
+                <div class="topic-card" onclick="location.href='part1-weekends.html';">
+                    <span class="topic-icon">🧑‍🤝‍🧑</span>
+                    <span class="topic-name">Weekends and Friends</span>
+                </div>
+            </div>
+        </div>
+
+        
+<!-- ========================================== -->
+<!-- PANEL 3: VOCABULARY DYNAMIC TOPIC PANEL   -->
+<!-- ========================================== -->
+<div id="part3-panel" class="speaking-panel">
+    <h2 style="color: #1e3d59; margin-top: 0;">📚 A2 Vocabulary Topics</h2>
+    <p style="color: #666; font-size: 14px; margin-bottom: 20px;">Select a topic below to explore the vocabulary words. (လေ့လာလိုသော ခေါင်းစဉ်ကို နှိပ်၍ စကားလုံးများကို ကြည့်ရှုပါ)။</p>
+    
+    <!-- ၁။ Topic ကတ်ပြားများ အရင်ပြသသည့်နေရာ -->
+    <div class="vocab-grid">
+        <!-- Clothes & Accessories ကတ်ပြားကို နှိပ်လျှင် page အသစ်သို့ သွားရန် ပြင်ဆင်ခြင်း -->
+        <div class="topic-card" onclick="location.href='clothes-vocabulary.html';">
+            <span class="topic-icon">🎒</span>
+            <span class="topic-name">Clothes & Accessories</span>
+        </div>
+        <!-- ၁။ Communication & Tech ကတ်ပြား -->
+        <div class="topic-card" onclick="location.href='tech-vocabulary.html';">
+            <span class="topic-icon">💻</span>
+            <span class="topic-name">Communication & Tech</span>
+        </div>
+
+        <!-- ၂။ Appliances ကတ်ပြား -->
+        <div class="topic-card" onclick="location.href='appliances-vocabulary.html';">
+            <span class="topic-icon">🔌</span>
+            <span class="topic-name">Appliances</span>
+        </div>
+        <!-- ၃။ Documents and Texts ကတ်ပြား -->
+        <div class="topic-card" onclick="location.href='documents-vocabulary.html';">
+            <span class="topic-icon">📜</span>
+            <span class="topic-name">Documents and Texts</span>
+        </div>
+        <div class="topic-card" onclick="selectTopic('appliances', this)">
+            <span class="topic-icon">🎓</span>
+            <span class="topic-name">Education</span>
+        </div>
+        <div class="topic-card" onclick="selectTopic('appliances', this)">
+            <span class="topic-icon">🎬</span>
+            <span class="topic-name">Entertainment and Media</span>
+        </div>
+        <div class="topic-card" onclick="selectTopic('appliances', this)">
+            <span class="topic-icon">‍👩‍👧‍👦</span>
+            <span class="topic-name">Family and Friends</span>
+        </div>
+        <div class="topic-card" onclick="selectTopic('appliances', this)">
+            <span class="topic-icon">🍉</span>
+            <span class="topic-name">Food and Drink</span>
+        </div>
+        <div class="topic-card" onclick="selectTopic('appliances', this)">
+            <span class="topic-icon">🧑‍⚕️</span>
+            <span class="topic-name">Health, Medicine and Exercise</span>
+        </div>
+        <div class="topic-card" onclick="selectTopic('appliances', this)">
+            <span class="topic-icon">🏓</span>
+            <span class="topic-name">Hobbies and Leisure</span>
+        </div>
+        <div class="topic-card" onclick="selectTopic('appliances', this)">
+            <span class="topic-icon">🏠</span>
+            <span class="topic-name">House and Home</span>
+        </div>
+        <div class="topic-card" onclick="selectTopic('appliances', this)">
+            <span class="topic-icon">📏</span>
+            <span class="topic-name">Measurements</span>
+        </div>
+        <div class="topic-card" onclick="selectTopic('appliances', this)">
+            <span class="topic-icon">🥹</span>
+            <span class="topic-name">Personal Feelings, Opinions and Experiences (adjectives)</span>
+        </div>
+        <div class="topic-card" onclick="selectTopic('appliances', this)">
+            <span class="topic-icon">🏛️</span>
+            <span class="topic-name">Places: Buildings</span>
+        </div>
+        <div class="topic-card" onclick="selectTopic('appliances', this)">
+            <span class="topic-icon">🌴</span>
+            <span class="topic-name">Places: Countryside</span>
+        </div>
+        <div class="topic-card" onclick="selectTopic('appliances', this)">
+            <span class="topic-icon">🏢</span>
+            <span class="topic-name">Places: Town and City</span>
+        </div>
+        <div class="topic-card" onclick="selectTopic('appliances', this)">
+            <span class="topic-icon">🚴‍♀️</span>
+            <span class="topic-name">Services</span>
+        </div>
+        <div class="topic-card" onclick="selectTopic('appliances', this)">
+            <span class="topic-icon">🛍️</span>
+            <span class="topic-name">Shopping</span>
+        </div>
+        <div class="topic-card" onclick="selectTopic('appliances', this)">
+            <span class="topic-icon">⚽</span>
+            <span class="topic-name">Sport</span>
+        </div>
+        <div class="topic-card" onclick="selectTopic('appliances', this)">
+            <span class="topic-icon">🌵</span>
+            <span class="topic-name">The Natural World</span>
+        </div>
+        <div class="topic-card" onclick="selectTopic('appliances', this)">
+            <span class="topic-icon">⏰</span>
+            <span class="topic-name">Time</span>
+        </div>
+        <div class="topic-card" onclick="selectTopic('appliances', this)">
+            <span class="topic-icon">✈️</span>
+            <span class="topic-name">Travel and Transport</span>
+        </div>
+        <div class="topic-card" onclick="selectTopic('appliances', this)">
+            <span class="topic-icon">🌦️</span>
+            <span class="topic-name">Weather</span>
+        </div>
+        <div class="topic-card" onclick="selectTopic('appliances', this)">
+            <span class="topic-icon">🧑‍🏭</span>
+            <span class="topic-name">Work and Jobs</span>
+        </div>
+    </div>
+
+    <!-- ၂။ ကတ်ပြားနှိပ်မှ ပွင့်လာမည့် စကားလုံးများပြသရာ Panel -->
+    <div id="words-display-panel" class="words-display-panel">
+        <h3 id="selected-topic-title" style="color: #1e3d59; margin-top: 0; border-bottom: 2px solid #f4f7f6; padding-bottom: 10px;"></h3>
+        <div class="words-grid" id="words-grid-container">
+            <!-- JavaScript က စကားလုံးတွေကို ဒီထဲမှာ Auto လာထုတ်ပေးပါမယ် -->
+        </div>
+    </div>
+</div>
+
+<!-- ========================================== -->
+<!-- PANEL 4: GRAMMAR DYNAMIC PANEL             -->
+<!-- ========================================== -->
+<div id="part4-panel" class="speaking-panel">
+    <h2 style="color: #1e3d59; margin-top: 0;">📝 CEFR A2 Grammar Syllabus</h2>
+    <p style="color: #666; font-size: 14px; margin-bottom: 20px;">Select a core grammar point below to unlock rules and examples. (လေ့လာလိုသော သဒ္ဒါခေါင်းစဉ်ကို နှိပ်၍ ဖတ်ရှုပါ)။</p>
+    
+    <!-- ၁။ Grammar Topic စာရင်းများ -->
+    <div class="grammar-grid">
+        <div class="grammar-card" onclick="selectGrammar('tenses', this)">
+            <span style="font-size: 24px;">⏱️</span>
+            <div>
+                <div style="font-size: 12px; color: #666; text-transform: uppercase; font-weight:600;">Structures</div>
+                <div class="gm-title" style="font-weight:700; color:#1e3d59;">Past & Present Tenses</div>
+            </div>
+        </div>
+        <div class="grammar-card" onclick="selectGrammar('modals', this)">
+            <span style="font-size: 24px;">💡</span>
+            <div>
+                <div style="font-size: 12px; color: #666; text-transform: uppercase; font-weight:600;">Modal Verbs</div>
+                <div class="gm-title" style="font-weight:700; color:#1e3d59;">Can, Could, Should</div>
+            </div>
+        </div>
+        <div class="grammar-card" onclick="selectGrammar('comparatives', this)">
+            <span style="font-size: 24px;">⚖️</span>
+            <div>
+                <div style="font-size: 12px; color: #666; text-transform: uppercase; font-weight:600;">Adjectives</div>
+                <div class="gm-title" style="font-weight:700; color:#1e3d59;">Comparatives & Superlatives</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ၂။ နှိပ်လိုက်မှ ပွင့်လာမည့် Grammar အချက်အလက်များ ပြသရာ Panel -->
+    <div id="grammar-display-panel" class="grammar-display-panel">
+        <h3 id="selected-grammar-title" style="color: #1e3d59; margin-top: 0; border-bottom: 2px solid #f4f7f6; padding-bottom: 10px;"></h3>
+        <div id="grammar-content-container">
+            <!-- JavaScript က ဒေတာတွေကို ဒီထဲမှာ Auto ထည့်ပေးပါမယ် -->
+        </div>
+    </div>
+</div>
+    </div>
+
+    <!-- JavaScript Switch Engine for crisp screen updates -->
+    <script>
+        function switchSpeakingTab(panelId) {
+            // Hide all active panels
+            const panels = document.querySelectorAll('.speaking-panel');
+            panels.forEach(p => p.style.display = 'none');
+            
+            // Remove selection styles from all menu option buttons
+            const buttons = document.querySelectorAll('.speaking-btn');
+            buttons.forEach(b => b.classList.remove('active-speaking-tab'));
+            
+            // Activate the designated layout panel container instantly
+            document.getElementById(panelId).style.display = 'block';
+            if (event && event.currentTarget) {
+                event.currentTarget.classList.add('active-speaking-tab');
+            }
+        }
+
+        // Script engine logic to pull global navbar structure file
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+        // Native Web Speech Engine for clear English pronunciation
+        function speakText(text) {
+            if ('speechSynthesis' in window) {
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'en-US'; // Native US Accent (UK အတွက် 'en-GB' ပြောင်းနိုင်သည်)
+            utterance.rate = 0.9;     // သင်ယူသူများ ရှင်းရှင်းလင်းလင်းကြားနိုင်ရန် အရှိန်အနည်းငယ်လျှော့ထားသည်
+            window.speechSynthesis.speak(utterance);
+            } else {
+            alert("Your browser does not support audio playback.");
+            }
+        }
+        // ၁။ A2 Grammar ဒေတာများ စုစည်းမှု
+const grammarData = {
+    tenses: {
+        title: "⏱️ Past & Present Tenses (အတိတ်ကာလနှင့် ပစ္စုပ္ပန်ကာလပြပြောင်းလဲမှုများ)",
+        content: [
+            { sub: "Present Simple vs Continuous", text: "A2 Level တွင် နေ့စဉ်အလေ့အထ (Habits) များအတွက် Simple (ဥပမာ - I play tennis) နှင့် လက်ရှိလုပ်နေဆဲ အပြုအမူများအတွက် Continuous (ဥပမာ - I am talking to you) ကို ကောင်းစွာ ခွဲခြားပြောဆိုနိုင်ရပါမည်။" },
+            { sub: "Past Simple Regular/Irregular Verbs", text: "ပြီးခဲ့သည့် အကြောင်းအရာများကို ပြောရန် Verb 2 (Past Form) များကို သုံးရပါမည်။ (ဥပမာ - I <b>visited</b> London last year. / She <b>went</b> to school yesterday.)" }
+        ]
+    },
+    modals: {
+        title: "💡 Modal Verbs (ခွင့်တောင်းခြင်း၊ အကြံဉာဏ်ပေးခြင်း)",
+        content: [
+            { sub: "Can & Could (Ability / Request)", text: "စွမ်းဆောင်ရည် သို့မဟုတ် ယဉ်ကျေးစွာ ခွင့်တောင်းရာတွင် သုံးသည်။ (ဥပမာ - <b>Can</b> you help me? / <b>Could</b> you pass the pen, please?)" },
+            { sub: "Should (Advice)", text: "အကြံဉာဏ်ပေးသည့်အခါ သုံးရပါမည်။ (ဥပမာ - You <b>should</b> practice speaking everyday to pass the A2 exam.)" }
+        ]
+    },
+    comparatives: {
+        title: "⚖️ Comparatives & Superlatives (နှိုင်းယှဉ်ပြနာမဝိသေသနများ)",
+        content: [
+            { sub: "Comparative Adjectives (-er / more)", text: "အရာနှစ်ခုကို နှိုင်းယှဉ်ရာတွင် သုံးသည်။ (ဥပမာ - Taking a train is <b>cheaper than</b> flying.)" },
+            { sub: "Superlative Adjectives (-est / most)", text: "အုပ်စုတစ်ခုထဲတွင် အသာလွန်ဆုံးကို ပြချင်လျှင် သုံးသည်။ (ဥပမာ - This is <b>the most interesting</b> topic in the test.)" }
+        ]
+    }
+};
+
+// ၂။ Grammar Card ကို နှိပ်လျှင် အချက်အလက်များ ဆွဲထုတ်ပြသမည့် စနစ်
+function selectGrammar(grammarKey, cardElement) {
+    document.querySelectorAll('.grammar-card').forEach(card => card.classList.remove('active-grammar'));
+    cardElement.classList.add('active-grammar');
+
+    const panel = document.getElementById("grammar-display-panel");
+    const titleContainer = document.getElementById("selected-grammar-title");
+    const contentContainer = document.getElementById("grammar-content-container");
+
+    const data = grammarData[grammarKey];
+    if (!data) return;
+
+    titleContainer.innerHTML = data.title;
+    
+    let html = "";
+    data.content.forEach(item => {
+        html += `
+            <div class="gm-content-block">
+                <div class="gm-sub">📌 ${item.sub}</div>
+                <div class="gm-text">${item.text}</div>
+            </div>
+        `;
+    });
+
+    contentContainer.innerHTML = html;
+    panel.style.display = "block";
+}
+
+       // ၁။ ဒေတာများကို Topic အလိုက် Object ပုံစံဖြင့် စနစ်တကျ ခွဲခြားသိမ်းဆည်းခြင်း
+const vocabularyData = {
+    clothes: {
+        title: "🎒 Clothes & Accessories Vocabulary",
+        words: [
+            { word: "Backpack", pos: "noun", ipa: "/ˈbæk.pæk/", mm: "ကျောပိုးအိတ်", ex: "He packed his books into his backpack." },
+            { word: "Raincoat", pos: "noun", ipa: "/ˈreɪn.koʊt/", mm: "မိုးကာအင်္ကျီ", ex: "Don't forget to wear your raincoat; it is pouring." },
+            { word: "Trainers", pos: "noun", ipa: "/ˈtreɪ.nəz/", mm: "အားကစားဖိနပ်", ex: "I bought a comfortable pair of trainers." },
+            { word: "Trousers", pos: "noun", ipa: "/ˈtraʊ.zəz/", mm: "ဘောင်းဘီရှည်", ex: "He wore grey trousers to the interview." }
+        ]
+    },
+    tech: {
+        title: "💻 Communication & Technology Vocabulary",
+        words: [
+            { word: "Download", pos: "verb", ipa: "/ˌdaʊnˈloʊd/", mm: "ဒေါင်းလုဒ်ဆွဲသည်", ex: "You can download the files from our website." },
+            { word: "Password", pos: "noun", ipa: "/ˈpæs.wɜːd/", mm: "လျှို့ဝှက်နံပါတ်", ex: "Never share your account password with anyone." },
+            { word: "Software", pos: "noun", ipa: "/ˈsɒft.weər/", mm: "ဆော့ဖ်ဝဲ", ex: "The computer needs new software updates." }
+        ]
+    },
+    appliances: {
+        title: "🔌 Appliances Vocabulary",
+        words: [
+            { word: "Fridge", pos: "noun", ipa: "/frɪdʒ/", mm: "ရေခဲသေတ္တာ", ex: "Put the milk back in the fridge." },
+            { word: "Laptop", pos: "noun", ipa: "/ˈlæp.tɒp/", mm: "လက်ပ်တော့ ကွန်ပျူတာ", ex: "She works on her laptop every morning." },
+            { word: "Washing machine", pos: "noun", ipa: "/ˈwɒʃ.ɪŋ məˌʃiːn/", mm: "အဝတ်လျှော်စက်", ex: "Load the clothes into the washing machine." }
+        ]
+    }
+};
+
+// ၂။ Topic ကတ်ပြားကို နှိပ်လိုက်လျှင် သက်ဆိုင်ရာ စကားလုံးများကို ဆွဲထုတ်ပြသမည့် စနစ်
+function selectTopic(topicKey, cardElement) {
+    // လက်ရှိ Active ဖြစ်နေတဲ့ ကတ်ပြား အရောင်ကို ဖြုတ်ပြီး နှိပ်လိုက်တဲ့ကတ်ကို အရောင်ပြောင်းခြင်း
+    document.querySelectorAll('.topic-card').forEach(card => card.classList.remove('active-topic'));
+    cardElement.classList.add('active-topic');
+
+    const panel = document.getElementById("words-display-panel");
+    const titleContainer = document.getElementById("selected-topic-title");
+    const gridContainer = document.getElementById("words-grid-container");
+
+    const topic = vocabularyData[topicKey];
+    if (!topic) return;
+
+    // ခေါင်းစဉ်တပ်ခြင်း
+    titleContainer.innerHTML = topic.title;
+    
+    // စကားလုံးများအားလုံးကို Card ပုံစံဖြင့် လှမ်းထည့်ခြင်း
+    let html = "";
+    topic.words.forEach(item => {
+        html += `
+            <div class="word-block">
+                <div class="word-main-line">
+                    <span class="word-text">${item.word}</span>
+                    <span class="word-meta">
+                        <span class="pos-badge">${item.pos}</span>${item.ipa} 
+                        <button class="audio-btn" onclick="speakText('${item.word}')">🔊</button>
+                    </span>
+                </div>
+                <div class="word-meaning">🇲🇲 ${item.mm}</div>
+                <div class="word-example">💡 "${item.ex.replace(new RegExp(item.word, 'gi'), `<b>$&</b>`)}"</div>
+            </div>
+        `;
+    });
+
+    gridContainer.innerHTML = html;
+    panel.style.display = "block"; // Panel ကို ဖော်ပြပေးခြင်း
+}
+
+// ၃။ Native Web Speech API အသံထွက်စနစ်
+function speakText(text) {
+    if ('speechSynthesis' in window) {
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'en-US';
+        utterance.rate = 0.9;
+        window.speechSynthesis.speak(utterance);
+    }
+}
+
+    </script>
+
+</body>
+</html>

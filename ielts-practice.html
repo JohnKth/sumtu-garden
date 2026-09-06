@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS Practice Portal - Sumtu Garden</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            margin: 0;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .header {
+        text-align: center;      /* စာသားအားလုံးကို အလယ်ဗဟို ညှိခြင်း */
+        margin: 0 auto;          /* ဘယ်ညာ Margin ကို အလိုအလျောက် အလယ်ပို့ခြင်း */
+        padding: 40px 20px;      /* အပေါ်အောက်၊ ဘယ်ညာ Space ချန်ခြင်း (စိတ်ကြိုက်ပြင်နိုင်) */
+        }
+        .header h1 { color: #9e1c22; font-weight: 700; margin-bottom: 5px; }
+        .header p { color: #1e3d59; font-size: 18px; font-weight: 500; }
+        
+        /* Grid Layout for the 4 Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Individual Skill Card */
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 15px rgba(0,0,0,0.05);
+            text-align: left;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 5px solid #1e3d59;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 8px 25px rgba(0,0,0,0.1);
+        }
+        .card.listening { border-top-color: #ff6e40; }
+        .card.reading { border-top-color: #17b890; }
+        .card.writing { border-top-color: #9e1c22; }
+        .card.speaking { border-top-color: #3498db; }
+        
+        .card h2 { font-size: 22px; color: #1e3d59; margin-top: 0; display: flex; align-items: center; gap: 10px; }
+        .card p { color: #666; font-size: 14px; line-height: 1.6; }
+        
+        .lesson-list { list-style: none; padding: 0; margin: 20px 0; }
+        .lesson-list li { padding: 10px 0; border-bottom: 1px solid #eee; font-size: 14px; display: flex; justify-content: space-between; align-items: center; }
+        .lesson-list a { color: #333; text-decoration: none; font-weight: 500; }
+        .lesson-list a:hover { color: #9e1c22; }
+        
+        .status-badge { background: #e8f5e9; color: #2e7d32; padding: 3px 10px; border-radius: 12px; font-size: 11px; font-weight: 600; }
+        .btn-start { display: block; text-align: center; background: #1e3d59; color: white; text-decoration: none; padding: 10px; border-radius: 6px; font-weight: 600; font-size: 14px; margin-top: 15px; transition: background 0.2s; }
+        .btn-start:hover { background: #9e1c22; }
+        
+        .back-home { display: inline-block; margin-top: 40px; color: #1e3d59; text-decoration: none; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <!-- navbar.html ကို အလိုအလျောက် ဆွဲခေါ်မည့် နေရာအမှန် -->
+    <div id="navbar-container"></div>
+    <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            });
+    </script>
+
+    <div class="header">
+        <h1>IELTS Interactive Practice Portal</h1>
+        <p>Improve your skills day-by-day with our guided lesson plans</p>
+    </div>
+
+    <div class="skills-grid">
+        
+        <!-- LISTENING CARD -->
+        <div class="card listening">
+            <h2>🎧 Listening Portal</h2>
+            <p>Master multi-choice tools, map labeling, and fill-in-the-blanks audio strategies.</p>
+            <ul class="lesson-list">
+                <li><a href="#">Lesson 1: Form Completion</a> <span class="status-badge">Free</span></li>
+                <li><a href="#">Lesson 2: Map Labeling</a> <span class="status-badge">Free</span></li>
+                <li><a href="#">Lesson 3: Multiple Choice</a> <span class="status-badge">Premium</span></li>
+            </ul>
+            <a href="#" class="btn-start">Enter Listening Hub</a>
+        </div>
+
+        <!-- READING CARD -->
+        <div class="card reading">
+            <h2>📖 Reading Portal</h2>
+            <p>Learn fast skimming and scanning methods for Academic & General texts.</p>
+            <ul class="lesson-list">
+                <li><a href="#">Lesson 1: True/False/Not Given</a> <span class="status-badge">Free</span></li>
+                <li><a href="#">Lesson 2: Headings Matching</a> <span class="status-badge">Free</span></li>
+                <li><a href="#">Lesson 3: Summary Completion</a> <span class="status-badge">Premium</span></li>
+            </ul>
+            <a href="#" class="btn-start">Enter Reading Hub</a>
+        </div>
+
+        <!-- WRITING CARD -->
+        <div class="card writing">
+            <h2>📝 Writing Portal</h2>
+            <p>Structure high-scoring task reports, graphs, and formal argument essays.</p>
+            <ul class="lesson-list">
+                <li><a href="#">Lesson 1: Task 1 Bar Charts</a> <span class="status-badge">Free</span></li>
+                <li><a href="#">Lesson 2: Task 2 Agree/Disagree</a> <span class="status-badge">Free</span></li>
+                <li><a href="#">Lesson 3: Task 2 Essay Templates</a> <span class="status-badge">Premium</span></li>
+            </ul>
+             <!-- Inside ielts-practice.html under Speaking Card -->
+            <a href="writing-hub.html" class="btn-start">Enter Writing Hub</a>
+        </div>
+
+        <!-- SPEAKING CARD -->
+        <div class="card speaking">
+            <h2>🗣️ Speaking Portal</h2>
+            <p>Build confidence for Part 1 interviews, Part 2 Cue Cards, and Part 3 arguments.</p>
+            <ul class="lesson-list">
+                <li><a href="#">Lesson 1: Part 1 Introduction</a> <span class="status-badge">Free</span></li>
+                <!-- Inside ielts-practice.html under Speaking Card -->
+                <li><a href="speaking-lesson1.html">Lesson 2: Part 2 Cue Card Strategy</a> <span class="status-badge">Free</span></li>
+                <li><a href="#">Lesson 3: Idioms & Vocabulary</a> <span class="status-badge">Premium</span></li>
+            </ul>
+            <!-- Inside ielts-practice.html under Speaking Card -->
+            <a href="speaking-hub.html" class="btn-start">Enter Speaking Hub</a>
+
+        </div>
+
+    </div>
+
+    <a href="index.html" class="back-home">← Back to Main Website</a>
+
+</body>
+</html>
